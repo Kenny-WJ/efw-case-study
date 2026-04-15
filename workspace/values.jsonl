@@ -16,20 +16,22 @@
 {"id":"shcap_bal","value":"shcap_bal (183 values): [0]: 0, [45]: 34919.7823, [91]: 36559.1292, [137]: 36559.1292, [182]: 0 | Stats: min: 0, max: 36559.1292, sum: 4.47e+6, avg: 31500.7522"}
 {"id":"hretearnings.bal_beg","value":"hretearnings.bal_beg (183 values): [0]: 0, [45]: 33116.1555, [91]: 22178.7728, [137]: 7687.0078, [182]: 0 | Stats: min: 0, max: 71441.4286, sum: 3.35e+6, avg: 28110.0144"}
 {"id":"hretearnings.bal","value":"hretearnings.bal (183 values): [0]: 0, [45]: 35869.316, [91]: 23421.2114, [137]: 3994.9414, [182]: 0 | Stats: min: 0, max: 71441.4286, sum: 3.35e+6, avg: 28110.0144"}
-{"id":"cshbal_beg","value":"cshbal_beg (183 values): [0]: 0, [45]: -0, [91]: 0, [137]: 0, [182]: 0 | Stats: min: -0, max: 29672.0873, sum: 132929.8187, avg: 3323.2455"}
-{"id":"cshbal","value":"cshbal (183 values): [0]: 0, [45]: -0, [91]: 0, [137]: 0, [182]: 0 | Stats: min: -0, max: 29672.0873, sum: 132929.8187, avg: 3323.2455"}
+{"id":"cshbal_beg","value":"cshbal_beg (183 values): [0]: 0, [45]: 0, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 29672.0873, sum: 132929.8188, avg: 16616.2273"}
+{"id":"cshbal","value":"cshbal (183 values): [0]: 0, [45]: 0, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 29672.0873, sum: 132929.8188, avg: 16616.2273"}
 {"id":"earnings_avail_dividend","value":"earnings_avail_dividend (183 values): [0]: 0, [45]: 35869.316, [91]: 26073.0905, [137]: 12686.62, [182]: 0 | Stats: min: 0, max: 75423.2651, sum: 3.72e+6, avg: 29086.7392"}
 {"id":"csh_avail","value":"csh_avail (183 values): [0]: 0, [45]: 0, [91]: 2651.879, [137]: 8691.6786, [182]: 0 | Stats: min: 0, max: 35279.9743, sum: 510940.7158, avg: 5058.819"}
 {"id":"pd_pos","value":"pd_pos (183 values): [0]: 0, [45]: 0, [91]: 2651.879, [137]: 8691.6786, [182]: 0 | Stats: min: 0, max: 8867.4005, sum: 378010.897, avg: 3742.6821"}
 {"id":"dividends_paid","value":"dividends_paid (183 values): [0]: 0, [45]: 0, [91]: -2651.879, [137]: -8691.6786, [182]: 0 | Stats: min: -8867.4005, max: 0, sum: -378010.897, avg: -3742.6821"}
 {"id":"fct","value":"fct (183 values): [0]: 1, [45]: 1.0769, [91]: 1.413, [137]: 1.9003, [182]: 2.4933 | Stats: min: 1, max: 2.4933, sum: 277.8351, avg: 1.5182"}
 {"id":"financed","value":"financed (183 values): [0]: 0, [45]: 7273.4395, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 31811.6306, sum: 337797.3012, avg: 7855.7512"}
-{"id":"tot_financed","value":337797.301232}
+{"id":"tot_financed","value":337797.301235}
 {"id":"eq_pro_rata_drwdn","value":"eq_pro_rata_drwdn (183 values): [0]: 0, [45]: 787.1899, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 3442.9094, sum: 36559.1292, avg: 850.2123"}
 {"id":"drwdn_dur_const","value":"drwdn_dur_const (183 values): [0]: 0, [45]: 787.1899, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 3442.9094, sum: 36559.1292, avg: 850.2123"}
 {"id":"all_rpmt_prd_intrt","value":0.04}
 {"id":"prd_disc_rt","value":"prd_disc_rt (183 values): [0]: 0.0034, [45]: 0.0034, [91]: 0.0102, [137]: 0.0101, [182]: 0.0102 | Stats: min: 0.0031, max: 0.0102, sum: 1.5319, avg: 0.0084"}
 {"id":"disc_fct","value":"disc_fct (183 values): [0]: 0, [45]: 0, [91]: 0.6413, [137]: 0.4032, [182]: 0.256 | Stats: min: 0, max: 1, sum: 74.3433, avg: 0.5466"}
+{"id":"pwa_rev_excl_debt_sizing","value":"pwa_rev_excl_debt_sizing (183 values): [0]: 0, [45]: 0, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 0, sum: 0"}
+{"id":"cfads_debt_sizing","value":"cfads_debt_sizing (183 values): [0]: 0, [45]: 0, [91]: 9281.5766, [137]: 8691.6786, [182]: 0 | Stats: min: 0, max: 10245.1239, sum: 845432.5871, avg: 8370.6197"}
 {"id":"svc_target_rt","value":"svc_target_rt (183 values): [0]: 0, [45]: 0, [91]: 6629.6976, [137]: 0, [182]: 0 | Stats: min: 0, max: 7317.9457, sum: 430862.5609, avg: 5984.2022"}
 {"id":"debt_capacity","value":301238.172037}
 {"id":"leverage_1","value":0.891772}
@@ -59,10 +61,10 @@
 {"id":"cf_avail_dsra","value":"cf_avail_dsra (183 values): [0]: 0, [45]: 0, [91]: 2651.879, [137]: 8691.6786, [182]: 0 | Stats: min: 0, max: 9371.1966, sum: 414570.0262, avg: 4104.6537"}
 {"id":"cashflow_avail_shln","value":"cashflow_avail_shln (183 values): [0]: 0, [45]: 0, [91]: 2651.879, [137]: 8691.6786, [182]: 0 | Stats: min: 0, max: 9371.1966, sum: 414570.0262, avg: 4104.6537"}
 {"id":"cashflow_avail_shcap_redemption","value":"cashflow_avail_shcap_redemption (183 values): [0]: 0, [45]: 0, [91]: 2651.879, [137]: 8691.6786, [182]: 0 | Stats: min: 0, max: 9371.1966, sum: 414570.0262, avg: 4104.6537"}
-{"id":"cf_avail_divd","value":"cf_avail_divd (183 values): [0]: 0, [45]: 0, [91]: 2651.879, [137]: 8691.6786, [182]: 0 | Stats: min: -27187.9326, max: 9316.3127, sum: 378010.8971, avg: 3742.6821"}
+{"id":"cf_avail_divd","value":"cf_avail_divd (183 values): [0]: 0, [45]: 0, [91]: 2651.879, [137]: 8691.6786, [182]: 0 | Stats: min: -27187.9326, max: 9316.3127, sum: 378010.897, avg: 3742.6821"}
 {"id":"net_cash_flow","value":"net_cash_flow (183 values): [0]: 0, [45]: 0, [91]: 0, [137]: 0, [182]: 0 | Stats: min: -29672.0873, max: 3870.4003, sum: 0, avg: 0"}
 {"id":"non_cur_ast","value":"non_cur_ast (183 values): [0]: 0, [45]: 355766.2973, [91]: 210745.341, [137]: 37633.0966, [182]: 0 | Stats: min: 0, max: 376330.9661, sum: 2.69e+7, avg: 189265.6261"}
-{"id":"current_assets","value":"current_assets (183 values): [0]: 0, [45]: 2927.7923, [91]: 4683.3192, [137]: 5055.3079, [182]: 0 | Stats: min: -0, max: 35041.6854, sum: 626168.047, avg: 4743.6973"}
+{"id":"current_assets","value":"current_assets (183 values): [0]: 0, [45]: 2927.7923, [91]: 4683.3192, [137]: 5055.3079, [182]: 0 | Stats: min: 0, max: 35041.6854, sum: 626168.0471, avg: 4930.4571"}
 {"id":"total_assets","value":"total_assets (183 values): [0]: 0, [45]: 358694.0896, [91]: 215428.6602, [137]: 42688.4045, [182]: 0 | Stats: min: 0, max: 379258.7584, sum: 2.75e+7, avg: 192320.8878"}
 {"id":"tot_liab","value":"tot_liab (183 values): [0]: 0, [45]: 358694.0896, [91]: 215428.6602, [137]: 42688.4045, [182]: 0 | Stats: min: 0, max: 379258.7584, sum: 2.75e+7, avg: 192320.8878"}
 {"id":"summ_bs","value":0}
@@ -138,6 +140,7 @@
 {"id":"target_dscr_1","value":1.4}
 {"id":"rpmt_prd_mrgn_1","value":0.02}
 {"id":"loan_life_1","value":18}
+{"id":"incl_pwa_rev_debt_sizing_1","value":1}
 {"id":"useful_life_ast_1","value":25}
 {"id":"model_track_tolerance_level","value":0.001}
 {"id":"chk_tolerance_level","value":0.001}
@@ -223,11 +226,11 @@
 {"id":"sources_chk","value":"sources_chk (391 values): [0]: 0, [97]: 0, [195]: , [293]: , [390]:  | Stats: min: 0, max: 0, sum: 0"}
 {"id":"sources_difference","value":"sources_difference (183 values): [0]: 0, [45]: 0, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 0, sum: 0"}
 {"id":"cashflow_avail_senior_debt","value":"cashflow_avail_senior_debt (297 values): [0]: 0, [74]: 8373.4606, [148]: 3123.7322, [222]: 0, [296]: 0 | Stats: min: 0, max: 10245.1239, sum: 845432.5871, avg: 8370.6197"}
-{"id":"cashflow_avail_senior_debt_2","value":"cashflow_avail_senior_debt_2 (183 values): [0]: 0, [45]: 0, [91]: 9281.5766, [137]: 8691.6786, [182]: 0 | Stats: min: -0, max: 10245.1239, sum: 845432.5872, avg: 6082.2488"}
+{"id":"cashflow_avail_senior_debt_2","value":"cashflow_avail_senior_debt_2 (183 values): [0]: 0, [45]: 0, [91]: 9281.5766, [137]: 8691.6786, [182]: 0 | Stats: min: 0, max: 10245.1239, sum: 845432.5871, avg: 8370.6197"}
 {"id":"cashflow_avail_senior_debt_1","value":"cashflow_avail_senior_debt_1 (114 values): [0]: 0, [28]: 0, [57]: 0, [85]: 0, [113]: 0 | Stats: min: 0, max: 0, sum: 0"}
 {"id":"prj_cst_financed","value":"prj_cst_financed (183 values): [0]: 0, [45]: 7273.4395, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 31811.6306, sum: 337797.3012, avg: 7855.7512"}
 {"id":"Solve!F44","value":[0,0]}
-{"id":"cashflow_avail_senior_debt_chk_2","value":"cashflow_avail_senior_debt_chk_2 (183 values): [0]: 0, [45]: 0, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 0, sum: 0.0001, avg: 0"}
+{"id":"cashflow_avail_senior_debt_chk_2","value":"cashflow_avail_senior_debt_chk_2 (183 values): [0]: 0, [45]: 0, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 0, sum: 0"}
 {"id":"cashflow_avail_senior_debt_chk_1","value":"cashflow_avail_senior_debt_chk_1 (114 values): [0]: 0, [28]: 0, [57]: 0, [85]: 0, [113]: 0 | Stats: min: 0, max: 0, sum: 0"}
 {"id":"prj_cst_financed_chk","value":"prj_cst_financed_chk (183 values): [0]: 0, [45]: 0, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 0, sum: 0"}
 {"id":"summ_Solve!F44","value":0}

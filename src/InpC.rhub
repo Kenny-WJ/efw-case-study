@@ -312,6 +312,10 @@
     /// @unit years
     input loan_life_1 = [18]
 
+    /// @label Include PWA revenue in CFADS for debt sizing
+    /// @unit 1 = include, 0 = exclude
+    input incl_pwa_rev_debt_sizing_1 = [1]
+
 
 # h_accounting: ACCOUNTING
 

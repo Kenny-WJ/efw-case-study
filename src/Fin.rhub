@@ -42,9 +42,17 @@
     /// @unit factor
     calc[n] disc_fct = IF({{hendconstprdflag.constprd[n]}}=1,1,{{disc_fct[n-1]}}/(1+{{prd_disc_rt[n]}}))
 
+    /// @label PWA revenue excluded from CFADS for debt sizing
+    /// @unit $ 000s
+    calc[n] pwa_rev_excl_debt_sizing = {{pwa_revenue[n]}}*(1-{{incl_pwa_rev_debt_sizing_1}})
+
+    /// @label CFADS for debt sizing
+    /// @unit $ 000s
+    calc[n] cfads_debt_sizing = {{cashflow_avail_senior_debt_2[n]}}-{{pwa_rev_excl_debt_sizing[n]}}
+
     /// @label Senior debt service at target ratio
     /// @unit $ 000s
-    calc[n] svc_target_rt = {{cashflow_avail_senior_debt_2[n]}}/{{target_dscr_1}}*{{senior_debt_ln_life_flag[n]}}
+    calc[n] svc_target_rt = {{cfads_debt_sizing[n]}}/{{target_dscr_1}}*{{senior_debt_ln_life_flag[n]}}
 
     /// @label Debt capacity
     /// @unit $ 000s
