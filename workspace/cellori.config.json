@@ -23,6 +23,8 @@
     "headerLevel3Uppercase": false,
     "headerLevel3Bold": false,
     "headerLevel3Underline": true,
+    "highlightBracketLabels": true,
+    "bracketLabelHighlightColor": "#FFFF00",
     "numberFormatPercent": "0.00% ;-0.00% _);\"- \";\" \"@\" \"",
     "numberFormatFactor": "#,##0.0000_);(#,##0.0000);\"-  \";\" \"@\" \"",
     "numberFormatDate": "dd mmm yy_);(###0);\"-  \";\" \"@\" \"",
@@ -66,5 +68,6 @@
       "type": "check",
       "highlightLinks": false
     }
-  ]
+  ],
+  "macros": []
 }

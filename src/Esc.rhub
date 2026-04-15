@@ -4,4 +4,4 @@
 
   /// @label CPI escalation factor
   /// @unit factor
-  calc[n] fct = (1+{{cpi_rt_1}})^INT(YEARFRAC({{fin_close_dt_1}},{{end[n]}}))
+  calc[n] fct = (1+{{cpi_rt_1}})^INT(YEARFRAC({{fin_close_dt_2}},{{end[n]}}))

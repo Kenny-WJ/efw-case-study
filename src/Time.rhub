@@ -53,7 +53,7 @@
 
     /// @label Financial close date flag
     /// @unit flag
-    calc[n] fin_close_dt_flag = IF(AND({{end[n-1]}}<{{fin_close_dt_1}},{{end[n]}}>={{fin_close_dt_1}}),1,0)
+    calc[n] fin_close_dt_flag = IF(AND({{end[n-1]}}<{{fin_close_dt_2}},{{end[n]}}>={{fin_close_dt_2}}),1,0)
 
   ## h_frst_constprd_flag: First construction period flag
 
@@ -65,7 +65,7 @@
 
     /// @label End of construction period date
     /// @unit date
-    calc constprd_dt = EOMONTH({{fin_close_dt_1}},{{constprd_length_2}})
+    calc constprd_dt = EOMONTH({{fin_close_dt_2}},{{constprd_length_2}})
 
     /// @label End of construction period flag
     /// @unit flag
@@ -137,6 +137,20 @@
     /// @label Useful life of asset flag
     /// @unit flag
     calc[n] useful_life_ast_flag = {{useful_life_ast_flag[n-1]}}+{{frst_op_prd_flag[n]}}-{{end_2[n-1]}}
+
+  ## h_pwa_term_flag: PWA term flag
+
+    /// @label End of PWA term date
+    /// @unit date
+    calc hpwatermflag.end_dt = EOMONTH({{constprd_dt}},({{pwa_term_1}}*{{months_in_year}}))
+
+    /// @label End of PWA term flag
+    /// @unit flag
+    calc[n] hpwatermflag.end = IF({{end[n]}}={{hpwatermflag.end_dt}},1,0)
+
+    /// @label PWA term flag
+    /// @unit flag
+    calc[n] pwa_term_flag = {{pwa_term_flag[n-1]}}+{{frst_op_prd_flag[n]}}-{{hpwatermflag.end[n-1]}}
 
   ## h_escalation_prd_yr_end_flag: Escalation period year end flag
 

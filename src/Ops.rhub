@@ -64,11 +64,25 @@
     /// @unit $ 000s
     calc[n] recmtl = {{wstthrpt[n]}}*{{recovery_rate_1}}*{{recmtl_rt_real_1}}*{{fct[n]}}/{{units_thousand}}
 
+  ## h_pwa_revenue: PWA revenue
+
+    /// @label PWA agreed generation per period
+    /// @unit MWh
+    calc[n] agreed_generation_prd = {{agreed_ann_generation_1}}/{{num_prds_yr}}*{{mos_mdl_prd[n]}}/{{length_op_prd}}
+
+    /// @label PWA generation sold
+    /// @unit MWh
+    calc[n] generation_sold = MIN({{agreed_generation_prd[n]}},{{net_generation[n]}})*{{op_prd_flag[n]}}*{{pwa_term_flag[n]}}*{{switch_0_off_1}}
+
+    /// @label PWA revenue
+    /// @unit $ 000s
+    calc[n] incremental_uplft = {{generation_sold[n]}}*{{prc_uplft_real_1}}*{{fct[n]}}/{{units_thousand}}
+
   ## h_total_revenue: Total revenue
 
     /// @label Revenue
     /// @unit $ 000s
-    calc[n] revenue = SUM(§{{gf[n]}}, {{net_grdsls[n]}}, {{embbnft[n]}}, {{recmtl[n]}}§)
+    calc[n] revenue = SUM(§{{gf[n]}}, {{net_grdsls[n]}}, {{embbnft[n]}}, {{recmtl[n]}}, {{incremental_uplft[n]}}§)
 
 
 # h_direct_costs: DIRECT COSTS

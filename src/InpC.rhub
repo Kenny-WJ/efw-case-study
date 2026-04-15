@@ -4,11 +4,11 @@
 
   /// @label First date of time rulers
   /// @unit date
-  input frst_dt_time_rulers_1 = [01 Jan 2026 ]
+  input frst_dt_time_rulers_1 = [01 Jan 26 ]
 
   /// @label Financial year end date of first model period
   /// @unit date
-  input fin_yr_enddt_frst_mdl_prd_1 = [31 Dec 2026 ]
+  input fin_yr_enddt_frst_mdl_prd_1 = [31 Dec 26 ]
 
   /// @label Financial year end month number
   /// @unit month #
@@ -24,7 +24,7 @@
 
   /// @label Financial close date
   /// @unit date
-  input fin_close_dt_1 = [30 Jun 2026 ]
+  input fin_close_dt_2 = [30 Jun 26 ]
 
   /// @label Construction period length
   /// @unit months
@@ -129,6 +129,24 @@
   /// @label Recovery rate
   /// @unit %
   input recovery_rate_1 = [0.02]
+
+  ## h_pwa_assumptions: PWA assumptions
+
+    /// @label PWA switch (1 = on, 0 = off)
+    /// @unit flag
+    input switch_0_off_1 = [1]
+
+    /// @label PWA term
+    /// @unit years
+    input pwa_term_1 = [15]
+
+    /// @label PWA agreed annual generation
+    /// @unit MWh p.a.
+    input agreed_ann_generation_1 = [150000]
+
+    /// @label PWA price uplift (real)
+    /// @unit $/MWh
+    input prc_uplft_real_1 = [50]
 
 
 # h_dir_cst_assumptions: DIRECT COST ASSUMPTIONS
@@ -345,24 +363,24 @@
 
     /// @label Pre-forecast period
     /// @unit label
-    input 1027 = [Pre-fcst]
+    input 1073 = [Pre-fcst]
 
     /// @label Financial Close
     /// @unit label
-    input 1028 = [Fin Close]
+    input 1074 = [Fin Close]
 
     /// @label Construction
     /// @unit label
-    input 1029 = [Construction]
+    input 1075 = [Construction]
 
     /// @label Operations
     /// @unit label
-    input 1030 = [Operations]
+    input 1076 = [Operations]
 
     /// @label Post ops
     /// @unit label
-    input 1031 = [Post ops]
+    input 1077 = [Post ops]
 
     /// @label Input row template for relocation macro
     /// @unit unit
-    input input_row_template_relocation_macro = [0]
+    input input_row_template_relocation_macro_1 = [0]
