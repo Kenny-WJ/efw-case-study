@@ -6,64 +6,65 @@
 {"id":"devcst","value":"devcst (183 values): [0]: 0, [45]: 0, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 2200, sum: 2200, avg: 2200"}
 {"id":"development_fee","value":"development_fee (183 values): [0]: 0, [45]: 0, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 0, sum: 0"}
 {"id":"o_m_mob","value":"o_m_mob (183 values): [0]: 0, [45]: 0, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 650, sum: 650, avg: 650"}
-{"id":"pos","value":"pos (183 values): [0]: 0, [45]: 7014.6341, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 31600, sum: 322900, avg: 7509.3023"}
-{"id":"const_cst","value":"const_cst (183 values): [0]: 0, [45]: -7014.6341, [91]: 0, [137]: 0, [182]: 0 | Stats: min: -31600, max: 0, sum: -322900, avg: -7509.3023"}
-{"id":"sum_pos","value":322900}
-{"id":"shcap_redemption_pos","value":"shcap_redemption_pos (183 values): [0]: 0, [45]: 0, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 15647.8282, sum: 15647.8282, avg: 15647.8282"}
-{"id":"shcap_redemption","value":"shcap_redemption (183 values): [0]: 0, [45]: 0, [91]: 0, [137]: 0, [182]: 0 | Stats: min: -15647.8282, max: 0, sum: -15647.8282, avg: -15647.8282"}
-{"id":"shcap_bal_beg","value":"shcap_bal_beg (183 values): [0]: 0, [45]: 14810.8259, [91]: 15647.8282, [137]: 15647.8282, [182]: 0 | Stats: min: 0, max: 15647.8282, sum: 1.93e+6, avg: 13609.9367"}
-{"id":"shcap_bal","value":"shcap_bal (183 values): [0]: 0, [45]: 15080.2009, [91]: 15647.8282, [137]: 15647.8282, [182]: 0 | Stats: min: 0, max: 15647.8282, sum: 1.93e+6, avg: 13609.9367"}
-{"id":"hretearnings.bal_beg","value":"hretearnings.bal_beg (183 values): [0]: 0, [45]: 33116.1555, [91]: 31170.6323, [137]: 26298.0657, [182]: 0 | Stats: min: 0, max: 86497.5654, sum: 4.26e+6, avg: 34385.1336"}
-{"id":"hretearnings.bal","value":"hretearnings.bal (183 values): [0]: 0, [45]: 35869.316, [91]: 32622.1839, [137]: 22815.1123, [182]: 0 | Stats: min: 0, max: 86497.5654, sum: 4.26e+6, avg: 34385.1336"}
-{"id":"cshbal_beg","value":"cshbal_beg (183 values): [0]: 0, [45]: 0, [91]: 0, [137]: 0, [182]: 0 | Stats: min: -0, max: 8969.8993, sum: 16485.2711, avg: 969.7218"}
-{"id":"cshbal","value":"cshbal (183 values): [0]: 0, [45]: 0, [91]: 0, [137]: 0, [182]: 0 | Stats: min: -0, max: 8969.8993, sum: 16485.2711, avg: 969.7218"}
-{"id":"earnings_avail_dividend","value":"earnings_avail_dividend (183 values): [0]: 0, [45]: 35869.316, [91]: 35274.0629, [137]: 31506.7909, [182]: 0 | Stats: min: 0, max: 90688.5148, sum: 4.66e+6, avg: 36427.1779"}
-{"id":"csh_avail","value":"csh_avail (183 values): [0]: 0, [45]: 0, [91]: 2651.879, [137]: 8691.6786, [182]: 0 | Stats: min: 0, max: 14786.8993, sum: 415407.4692, avg: 3846.3655"}
-{"id":"pd_pos","value":"pd_pos (183 values): [0]: 0, [45]: 0, [91]: 2651.879, [137]: 8691.6786, [182]: 0 | Stats: min: 0, max: 9142.6308, sum: 398922.1981, avg: 3693.7241"}
-{"id":"dividends_paid","value":"dividends_paid (183 values): [0]: 0, [45]: 0, [91]: -2651.879, [137]: -8691.6786, [182]: 0 | Stats: min: -9142.6308, max: 0, sum: -398922.1981, avg: -3693.7241"}
+{"id":"pwa_capex","value":"pwa_capex (183 values): [0]: 0, [45]: 1833.3333, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 1833.3333, sum: 22000, avg: 1833.3333"}
+{"id":"pos","value":"pos (183 values): [0]: 0, [45]: 8847.9675, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 31600, sum: 344900, avg: 8020.9302"}
+{"id":"const_cst","value":"const_cst (183 values): [0]: 0, [45]: -8847.9675, [91]: 0, [137]: 0, [182]: 0 | Stats: min: -31600, max: 0, sum: -344900, avg: -8020.9302"}
+{"id":"sum_pos","value":344900}
+{"id":"shcap_redemption_pos","value":"shcap_redemption_pos (183 values): [0]: 0, [45]: 0, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 36559.1292, sum: 36559.1292, avg: 36559.1292"}
+{"id":"shcap_redemption","value":"shcap_redemption (183 values): [0]: 0, [45]: 0, [91]: 0, [137]: 0, [182]: 0 | Stats: min: -36559.1292, max: 0, sum: -36559.1292, avg: -36559.1292"}
+{"id":"shcap_bal_beg","value":"shcap_bal_beg (183 values): [0]: 0, [45]: 34132.5924, [91]: 36559.1292, [137]: 36559.1292, [182]: 0 | Stats: min: 0, max: 36559.1292, sum: 4.47e+6, avg: 31500.7522"}
+{"id":"shcap_bal","value":"shcap_bal (183 values): [0]: 0, [45]: 34919.7823, [91]: 36559.1292, [137]: 36559.1292, [182]: 0 | Stats: min: 0, max: 36559.1292, sum: 4.47e+6, avg: 31500.7522"}
+{"id":"hretearnings.bal_beg","value":"hretearnings.bal_beg (183 values): [0]: 0, [45]: 33116.1555, [91]: 22178.7728, [137]: 7687.0078, [182]: 0 | Stats: min: 0, max: 71441.4286, sum: 3.35e+6, avg: 28110.0144"}
+{"id":"hretearnings.bal","value":"hretearnings.bal (183 values): [0]: 0, [45]: 35869.316, [91]: 23421.2114, [137]: 3994.9414, [182]: 0 | Stats: min: 0, max: 71441.4286, sum: 3.35e+6, avg: 28110.0144"}
+{"id":"cshbal_beg","value":"cshbal_beg (183 values): [0]: 0, [45]: -0, [91]: 0, [137]: 0, [182]: 0 | Stats: min: -0, max: 29672.0873, sum: 132929.8187, avg: 3323.2455"}
+{"id":"cshbal","value":"cshbal (183 values): [0]: 0, [45]: -0, [91]: 0, [137]: 0, [182]: 0 | Stats: min: -0, max: 29672.0873, sum: 132929.8187, avg: 3323.2455"}
+{"id":"earnings_avail_dividend","value":"earnings_avail_dividend (183 values): [0]: 0, [45]: 35869.316, [91]: 26073.0905, [137]: 12686.62, [182]: 0 | Stats: min: 0, max: 75423.2651, sum: 3.72e+6, avg: 29086.7392"}
+{"id":"csh_avail","value":"csh_avail (183 values): [0]: 0, [45]: 0, [91]: 2651.879, [137]: 8691.6786, [182]: 0 | Stats: min: 0, max: 35279.9743, sum: 510940.7158, avg: 5058.819"}
+{"id":"pd_pos","value":"pd_pos (183 values): [0]: 0, [45]: 0, [91]: 2651.879, [137]: 8691.6786, [182]: 0 | Stats: min: 0, max: 8867.4005, sum: 378010.897, avg: 3742.6821"}
+{"id":"dividends_paid","value":"dividends_paid (183 values): [0]: 0, [45]: 0, [91]: -2651.879, [137]: -8691.6786, [182]: 0 | Stats: min: -8867.4005, max: 0, sum: -378010.897, avg: -3742.6821"}
 {"id":"fct","value":"fct (183 values): [0]: 1, [45]: 1.0769, [91]: 1.413, [137]: 1.9003, [182]: 2.4933 | Stats: min: 1, max: 2.4933, sum: 277.8351, avg: 1.5182"}
-{"id":"financed","value":"financed (183 values): [0]: 0, [45]: 5455.1444, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 31812.6685, sum: 316886.0002, avg: 7369.4419"}
-{"id":"tot_financed","value":316886.000206}
-{"id":"eq_pro_rata_drwdn","value":"eq_pro_rata_drwdn (183 values): [0]: 0, [45]: 269.375, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 1570.9093, sum: 15647.8282, avg: 363.903"}
-{"id":"drwdn_dur_const","value":"drwdn_dur_const (183 values): [0]: 0, [45]: 269.375, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 1570.9093, sum: 15647.8282, avg: 363.903"}
+{"id":"financed","value":"financed (183 values): [0]: 0, [45]: 7273.4395, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 31811.6306, sum: 337797.3012, avg: 7855.7512"}
+{"id":"tot_financed","value":337797.301232}
+{"id":"eq_pro_rata_drwdn","value":"eq_pro_rata_drwdn (183 values): [0]: 0, [45]: 787.1899, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 3442.9094, sum: 36559.1292, avg: 850.2123"}
+{"id":"drwdn_dur_const","value":"drwdn_dur_const (183 values): [0]: 0, [45]: 787.1899, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 3442.9094, sum: 36559.1292, avg: 850.2123"}
 {"id":"all_rpmt_prd_intrt","value":0.04}
 {"id":"prd_disc_rt","value":"prd_disc_rt (183 values): [0]: 0.0034, [45]: 0.0034, [91]: 0.0102, [137]: 0.0101, [182]: 0.0102 | Stats: min: 0.0031, max: 0.0102, sum: 1.5319, avg: 0.0084"}
 {"id":"disc_fct","value":"disc_fct (183 values): [0]: 0, [45]: 0, [91]: 0.6413, [137]: 0.4032, [182]: 0.256 | Stats: min: 0, max: 1, sum: 74.3433, avg: 0.5466"}
 {"id":"svc_target_rt","value":"svc_target_rt (183 values): [0]: 0, [45]: 0, [91]: 6629.6976, [137]: 0, [182]: 0 | Stats: min: 0, max: 7317.9457, sum: 430862.5609, avg: 5984.2022"}
 {"id":"debt_capacity","value":301238.172037}
-{"id":"leverage_1","value":0.95062}
-{"id":"leverage_2","value":0.95062}
-{"id":"senior_debt_drwdn","value":"senior_debt_drwdn (183 values): [0]: 0, [45]: 5185.7695, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 30241.7592, sum: 301238.172, avg: 7005.5389"}
-{"id":"bal_beg","value":"bal_beg (183 values): [0]: 0, [45]: 285124.9437, [91]: 158864.6075, [137]: 0, [182]: 0 | Stats: min: 0, max: 301238.172, sum: 1.99e+7, avg: 174212.7939"}
-{"id":"bal","value":"bal (183 values): [0]: 0, [45]: 290310.7131, [91]: 153858.8593, [137]: 0, [182]: 0 | Stats: min: 0, max: 301238.172, sum: 1.99e+7, avg: 174212.7939"}
+{"id":"leverage_1","value":0.891772}
+{"id":"leverage_2","value":0.891772}
+{"id":"senior_debt_drwdn","value":"senior_debt_drwdn (183 values): [0]: 0, [45]: 6486.2497, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 28368.7212, sum: 301238.172, avg: 7005.5389"}
+{"id":"bal_beg","value":"bal_beg (183 values): [0]: 0, [45]: 281244.1098, [91]: 158864.6075, [137]: 0, [182]: 0 | Stats: min: 0, max: 301238.172, sum: 1.95e+7, avg: 171163.4225"}
+{"id":"bal","value":"bal (183 values): [0]: 0, [45]: 287730.3595, [91]: 153858.8593, [137]: 0, [182]: 0 | Stats: min: 0, max: 301238.172, sum: 1.95e+7, avg: 171163.4225"}
 {"id":"hrpmtprdint.pos","value":"hrpmtprdint.pos (183 values): [0]: 0, [45]: 0, [91]: 1623.9493, [137]: 0, [182]: 0 | Stats: min: 0, max: 3035.713, sum: 129624.3888, avg: 1800.3387"}
 {"id":"senior_debt_rpmt_prd_int","value":"senior_debt_rpmt_prd_int (183 values): [0]: 0, [45]: 0, [91]: -1623.9493, [137]: 0, [182]: 0 | Stats: min: -3035.713, max: 0, sum: -129624.3888, avg: -1800.3387"}
 {"id":"hsculptedprincipalrpmt.pos","value":"hsculptedprincipalrpmt.pos (183 values): [0]: 0, [45]: 0, [91]: 5005.7483, [137]: 0, [182]: 0 | Stats: min: 0, max: 6625.3302, sum: 301238.172, avg: 4183.8635"}
 {"id":"senior_debt_sculpted_rpmt","value":"senior_debt_sculpted_rpmt (183 values): [0]: 0, [45]: 0, [91]: -5005.7483, [137]: 0, [182]: 0 | Stats: min: -6625.3302, max: 0, sum: -301238.172, avg: -4183.8635"}
 {"id":"upfront_fee","value":"upfront_fee (183 values): [0]: 0, [45]: 0, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 2600, sum: 2600, avg: 2600"}
-{"id":"undrawn","value":"undrawn (183 values): [0]: 260000, [45]: 0, [91]: 101135.3925, [137]: 260000, [182]: 260000 | Stats: min: 0, max: 260000, sum: 2.82e+7, avg: 177657.5518"}
-{"id":"commitment_fee","value":"commitment_fee (183 values): [0]: 0, [45]: 0, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 191.8559, sum: 2947.2949, avg: 84.2084"}
+{"id":"undrawn","value":"undrawn (183 values): [0]: 260000, [45]: 0, [91]: 101135.3925, [137]: 260000, [182]: 260000 | Stats: min: 0, max: 260000, sum: 2.86e+7, avg: 178526.9241"}
+{"id":"commitment_fee","value":"commitment_fee (183 values): [0]: 0, [45]: 0, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 192.1064, sum: 3181.5567, avg: 88.3766"}
 {"id":"all_intrt","value":0.045}
-{"id":"int_dur_const","value":"int_dur_const (183 values): [0]: 0, [45]: 1104.8592, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 1144.6621, sum: 26972.3701, avg: 642.1993"}
-{"id":"hfinancingcosts.pos","value":"hfinancingcosts.pos (183 values): [0]: 0, [45]: 1104.8592, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 2600, sum: 32519.6651, avg: 756.2713"}
-{"id":"financing_costs","value":"financing_costs (183 values): [0]: 0, [45]: -1104.8592, [91]: 0, [137]: 0, [182]: 0 | Stats: min: -2600, max: 0, sum: -32519.6651, avg: -756.2713"}
-{"id":"calc","value":"calc (183 values): [0]: 0, [45]: -269.375, [91]: 0, [137]: 0, [182]: 0 | Stats: min: -1570.9093, max: 0, sum: -15647.8282, avg: -363.903"}
+{"id":"int_dur_const","value":"int_dur_const (183 values): [0]: 0, [45]: 1089.8209, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 1139.745, sum: 25649.4094, avg: 610.7002"}
+{"id":"hfinancingcosts.pos","value":"hfinancingcosts.pos (183 values): [0]: 0, [45]: 1089.8209, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 2600, sum: 31430.9661, avg: 730.9527"}
+{"id":"financing_costs","value":"financing_costs (183 values): [0]: 0, [45]: -1089.8209, [91]: 0, [137]: 0, [182]: 0 | Stats: min: -2600, max: 0, sum: -31430.9661, avg: -730.9527"}
+{"id":"calc","value":"calc (183 values): [0]: 0, [45]: -787.1899, [91]: 0, [137]: 0, [182]: 0 | Stats: min: -3442.9094, max: 0, sum: -36559.1292, avg: -850.2123"}
 {"id":"ebitda","value":"ebitda (183 values): [0]: 0, [45]: 2753.1605, [91]: 9281.5766, [137]: 8762.9219, [182]: 0 | Stats: min: 0, max: 10245.1239, sum: 883966.252, avg: 6960.3642"}
-{"id":"ebit","value":"ebit (183 values): [0]: 0, [45]: 2753.1605, [91]: 5727.38, [137]: 5208.7253, [182]: 0 | Stats: min: 0, max: 6690.9273, sum: 528546.5869, avg: 4161.7841"}
-{"id":"pft_before_tax","value":"pft_before_tax (183 values): [0]: 0, [45]: 2753.1605, [91]: 4103.4306, [137]: 5208.7253, [182]: 0 | Stats: min: 0, max: 5998.3118, sum: 398922.1981, avg: 3141.1197"}
-{"id":"pft_after_tax","value":"pft_after_tax (183 values): [0]: 0, [45]: 2753.1605, [91]: 4103.4306, [137]: 5208.7253, [182]: 0 | Stats: min: 0, max: 5998.3118, sum: 398922.1981, avg: 3141.1197"}
-{"id":"additions_ret_earnings","value":"additions_ret_earnings (183 values): [0]: 0, [45]: 2753.1605, [91]: 1451.5516, [137]: -3482.9534, [182]: 0 | Stats: min: -3658.6753, max: 3123.7322, sum: 0, avg: 0"}
+{"id":"ebit","value":"ebit (183 values): [0]: 0, [45]: 2753.1605, [91]: 5518.267, [137]: 4999.6122, [182]: 0 | Stats: min: 0, max: 6481.8143, sum: 507635.2859, avg: 3997.1282"}
+{"id":"pft_before_tax","value":"pft_before_tax (183 values): [0]: 0, [45]: 2753.1605, [91]: 3894.3176, [137]: 4999.6122, [182]: 0 | Stats: min: 0, max: 5789.1988, sum: 378010.897, avg: 2976.4638"}
+{"id":"pft_after_tax","value":"pft_after_tax (183 values): [0]: 0, [45]: 2753.1605, [91]: 3894.3176, [137]: 4999.6122, [182]: 0 | Stats: min: 0, max: 5789.1988, sum: 378010.897, avg: 2976.4638"}
+{"id":"additions_ret_earnings","value":"additions_ret_earnings (183 values): [0]: 0, [45]: 2753.1605, [91]: 1242.4386, [137]: -3692.0664, [182]: 0 | Stats: min: -3862.7539, max: 3123.7322, sum: -0, avg: -0"}
 {"id":"hcfstatement.op_cashflow","value":"hcfstatement.op_cashflow (183 values): [0]: 0, [45]: 2664.3489, [91]: 9281.5766, [137]: 8691.6786, [182]: 0 | Stats: min: 0, max: 10245.1239, sum: 883966.252, avg: 6960.3642"}
-{"id":"hcfstatement.cashflow_avail_senior_debt","value":"hcfstatement.cashflow_avail_senior_debt (183 values): [0]: 0, [45]: 0, [91]: 9281.5766, [137]: 8691.6786, [182]: 0 | Stats: min: 0, max: 10245.1239, sum: 845432.5871, avg: 7828.0795"}
-{"id":"cf_avail_dsra","value":"cf_avail_dsra (183 values): [0]: 0, [45]: 0, [91]: 2651.879, [137]: 8691.6786, [182]: 0 | Stats: min: 0, max: 9371.1966, sum: 414570.0263, avg: 3838.6114"}
-{"id":"cashflow_avail_shln","value":"cashflow_avail_shln (183 values): [0]: 0, [45]: 0, [91]: 2651.879, [137]: 8691.6786, [182]: 0 | Stats: min: 0, max: 9371.1966, sum: 414570.0263, avg: 3838.6114"}
-{"id":"cashflow_avail_shcap_redemption","value":"cashflow_avail_shcap_redemption (183 values): [0]: 0, [45]: 0, [91]: 2651.879, [137]: 8691.6786, [182]: 0 | Stats: min: 0, max: 9371.1966, sum: 414570.0263, avg: 3838.6114"}
-{"id":"cf_avail_divd","value":"cf_avail_divd (183 values): [0]: 0, [45]: 0, [91]: 2651.879, [137]: 8691.6786, [182]: 0 | Stats: min: -6276.6316, max: 9316.3127, sum: 398922.1981, avg: 3693.7241"}
-{"id":"net_cash_flow","value":"net_cash_flow (183 values): [0]: 0, [45]: 0, [91]: 0, [137]: 0, [182]: 0 | Stats: min: -8969.8993, max: 3499.3127, sum: 0, avg: 0"}
-{"id":"non_cur_ast","value":"non_cur_ast (183 values): [0]: 0, [45]: 338507.0695, [91]: 199035.0124, [137]: 35541.9665, [182]: 0 | Stats: min: 0, max: 355419.6651, sum: 2.57e+7, avg: 181112.4004"}
-{"id":"current_assets","value":"current_assets (183 values): [0]: 0, [45]: 2927.7923, [91]: 4683.3192, [137]: 5055.3079, [182]: 0 | Stats: min: -0, max: 14339.4973, sum: 509723.4994, avg: 3667.0755"}
-{"id":"total_assets","value":"total_assets (183 values): [0]: 0, [45]: 341434.8618, [91]: 203718.3316, [137]: 40597.2744, [182]: 0 | Stats: min: 0, max: 358347.4574, sum: 2.62e+7, avg: 183410.3801"}
-{"id":"tot_liab","value":"tot_liab (183 values): [0]: 0, [45]: 341434.8618, [91]: 203718.3316, [137]: 40597.2744, [182]: 0 | Stats: min: 0, max: 358347.4574, sum: 2.62e+7, avg: 183410.3801"}
+{"id":"hcfstatement.cashflow_avail_senior_debt","value":"hcfstatement.cashflow_avail_senior_debt (183 values): [0]: 0, [45]: 0, [91]: 9281.5766, [137]: 8691.6786, [182]: 0 | Stats: min: 0, max: 10245.1239, sum: 845432.5871, avg: 8370.6197"}
+{"id":"cf_avail_dsra","value":"cf_avail_dsra (183 values): [0]: 0, [45]: 0, [91]: 2651.879, [137]: 8691.6786, [182]: 0 | Stats: min: 0, max: 9371.1966, sum: 414570.0262, avg: 4104.6537"}
+{"id":"cashflow_avail_shln","value":"cashflow_avail_shln (183 values): [0]: 0, [45]: 0, [91]: 2651.879, [137]: 8691.6786, [182]: 0 | Stats: min: 0, max: 9371.1966, sum: 414570.0262, avg: 4104.6537"}
+{"id":"cashflow_avail_shcap_redemption","value":"cashflow_avail_shcap_redemption (183 values): [0]: 0, [45]: 0, [91]: 2651.879, [137]: 8691.6786, [182]: 0 | Stats: min: 0, max: 9371.1966, sum: 414570.0262, avg: 4104.6537"}
+{"id":"cf_avail_divd","value":"cf_avail_divd (183 values): [0]: 0, [45]: 0, [91]: 2651.879, [137]: 8691.6786, [182]: 0 | Stats: min: -27187.9326, max: 9316.3127, sum: 378010.8971, avg: 3742.6821"}
+{"id":"net_cash_flow","value":"net_cash_flow (183 values): [0]: 0, [45]: 0, [91]: 0, [137]: 0, [182]: 0 | Stats: min: -29672.0873, max: 3870.4003, sum: 0, avg: 0"}
+{"id":"non_cur_ast","value":"non_cur_ast (183 values): [0]: 0, [45]: 355766.2973, [91]: 210745.341, [137]: 37633.0966, [182]: 0 | Stats: min: 0, max: 376330.9661, sum: 2.69e+7, avg: 189265.6261"}
+{"id":"current_assets","value":"current_assets (183 values): [0]: 0, [45]: 2927.7923, [91]: 4683.3192, [137]: 5055.3079, [182]: 0 | Stats: min: -0, max: 35041.6854, sum: 626168.047, avg: 4743.6973"}
+{"id":"total_assets","value":"total_assets (183 values): [0]: 0, [45]: 358694.0896, [91]: 215428.6602, [137]: 42688.4045, [182]: 0 | Stats: min: 0, max: 379258.7584, sum: 2.75e+7, avg: 192320.8878"}
+{"id":"tot_liab","value":"tot_liab (183 values): [0]: 0, [45]: 358694.0896, [91]: 215428.6602, [137]: 42688.4045, [182]: 0 | Stats: min: 0, max: 379258.7584, sum: 2.75e+7, avg: 192320.8878"}
 {"id":"summ_bs","value":0}
 {"id":"bs","value":"bs (391 values): [0]: 0, [97]: 0, [195]: , [293]: , [390]:  | Stats: min: 0, max: 0, sum: 0"}
 {"id":"bs_difference","value":"bs_difference (183 values): [0]: 0, [45]: 0, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 0, sum: 0"}
@@ -84,6 +85,7 @@
 {"id":"devcst_amt_1","value":2200}
 {"id":"dev_fee_amt_1","value":0}
 {"id":"o_m_mob_amt_1","value":650}
+{"id":"pwa_capex_amt_1","value":22000}
 {"id":"plnt_net_capacity_1","value":28.5}
 {"id":"plnt_thrpt_1","value":31}
 {"id":"plnt_avail_1","value":0.89}
@@ -150,10 +152,10 @@
 {"id":"small_negative_val_irr","value":0}
 {"id":"input_row_template_relocation_macro_1","value":0}
 {"id":"cst","value":"cst (183 values): [0]: , [45]: 0.022, [91]: , [137]: , [182]:  | Stats: min: 0.022, max: 0.1, sum: 1, avg: 0.0238"}
-{"id":"dc","value":"dc (183 values): [0]: 0, [45]: -4080.9103, [91]: 0, [137]: 0, [182]: 0 | Stats: min: -30029.0907, max: 0, sum: -268718.507, avg: -6249.2676"}
+{"id":"dc","value":"dc (183 values): [0]: 0, [45]: -5396.4287, [91]: 0, [137]: 0, [182]: 0 | Stats: min: -28157.0906, max: 0, sum: -269807.2059, avg: -6274.5862"}
 {"id":"senior_debt_svc","value":"senior_debt_svc (183 values): [0]: 0, [45]: 0, [91]: 6629.6976, [137]: 0, [182]: 0 | Stats: min: 0, max: 7317.9457, sum: 430862.5609, avg: 5984.2022"}
-{"id":"senior_tot_cashflows","value":"senior_tot_cashflows (183 values): [0]: 0, [45]: -4080.9103, [91]: 6629.6976, [137]: 0, [182]: 0 | Stats: min: -30029.0907, max: 7317.9457, sum: 162144.0539, avg: 1409.9483"}
-{"id":"avg_cst_debt","value":0.044394}
+{"id":"senior_tot_cashflows","value":"senior_tot_cashflows (183 values): [0]: 0, [45]: -5396.4287, [91]: 6629.6976, [137]: 0, [182]: 0 | Stats: min: -28157.0906, max: 7317.9457, sum: 161055.355, avg: 1400.4813"}
+{"id":"avg_cst_debt","value":0.044459}
 {"id":"n_3_mo_historic_dscr","value":"n_3_mo_historic_dscr (183 values): [0]: na, [45]: na, [91]: 1.4, [137]: na, [182]: na | Stats: min: 1.4, max: 1.4, sum: 100.8, avg: 1.4"}
 {"id":"min","value":1.4}
 {"id":"avg","value":1.4}
@@ -161,15 +163,15 @@
 {"id":"rolling_over_senior_debt_term","value":"rolling_over_senior_debt_term (183 values): [0]: 359873.5534, [45]: 418889.4915, [91]: 215402.403, [137]: 0, [182]: 0 | Stats: min: 0, max: 421733.4409, sum: 3.62e+7, avg: 304092.4391"}
 {"id":"rolling_llcr","value":"rolling_llcr (183 values): [0]: na, [45]: na, [91]: 1.4, [137]: na, [182]: na | Stats: min: 1.4, max: 1.4, sum: 100.8, avg: 1.4"}
 {"id":"minimum_llcr","value":1.4}
-{"id":"blended_returns","value":"blended_returns (183 values): [0]: 0, [45]: 0, [91]: 2651.879, [137]: 8691.6786, [182]: 0 | Stats: min: 0, max: 18341.0959, sum: 414570.0263, avg: 3838.6114"}
-{"id":"tot_cashflows","value":"tot_cashflows (183 values): [0]: 0, [45]: -269.375, [91]: 2651.879, [137]: 8691.6786, [182]: 0 | Stats: min: -1570.9093, max: 18341.0959, sum: 398922.1981, avg: 2770.293"}
-{"id":"blended","value":0.340736}
-{"id":"hcapitalizedfinancingcst.tot","value":32519.665076}
-{"id":"tot_cst","value":355419.665076}
-{"id":"hdeprfixedast.pos","value":"hdeprfixedast.pos (183 values): [0]: 0, [45]: 0, [91]: 3554.1967, [137]: 3554.1967, [182]: 0 | Stats: min: 0, max: 3554.1967, sum: 355419.6651, avg: 3554.1967"}
-{"id":"fixed_ast_depr","value":"fixed_ast_depr (183 values): [0]: 0, [45]: 0, [91]: -3554.1967, [137]: -3554.1967, [182]: 0 | Stats: min: -3554.1967, max: 0, sum: -355419.6651, avg: -3554.1967"}
-{"id":"hfixedastbal.beg","value":"hfixedastbal.beg (183 values): [0]: 0, [45]: 330387.5762, [91]: 202589.2091, [137]: 39096.1632, [182]: 0 | Stats: min: 0, max: 355419.6651, sum: 2.57e+7, avg: 181112.4004"}
-{"id":"fixed_ast_bal","value":"fixed_ast_bal (183 values): [0]: 0, [45]: 338507.0695, [91]: 199035.0124, [137]: 35541.9665, [182]: 0 | Stats: min: 0, max: 355419.6651, sum: 2.57e+7, avg: 181112.4004"}
+{"id":"blended_returns","value":"blended_returns (183 values): [0]: 0, [45]: 0, [91]: 2651.879, [137]: 8691.6786, [182]: 0 | Stats: min: 0, max: 39043.2839, sum: 414570.0262, avg: 4104.6537"}
+{"id":"tot_cashflows","value":"tot_cashflows (183 values): [0]: 0, [45]: -787.1899, [91]: 2651.879, [137]: 8691.6786, [182]: 0 | Stats: min: -3442.9094, max: 39043.2839, sum: 378010.897, avg: 2625.0757"}
+{"id":"blended","value":0.197364}
+{"id":"hcapitalizedfinancingcst.tot","value":31430.966114}
+{"id":"tot_cst","value":376330.966114}
+{"id":"hdeprfixedast.pos","value":"hdeprfixedast.pos (183 values): [0]: 0, [45]: 0, [91]: 3763.3097, [137]: 3763.3097, [182]: 0 | Stats: min: 0, max: 3763.3097, sum: 376330.9661, avg: 3763.3097"}
+{"id":"fixed_ast_depr","value":"fixed_ast_depr (183 values): [0]: 0, [45]: 0, [91]: -3763.3097, [137]: -3763.3097, [182]: 0 | Stats: min: -3763.3097, max: 0, sum: -376330.9661, avg: -3763.3097"}
+{"id":"hfixedastbal.beg","value":"hfixedastbal.beg (183 values): [0]: 0, [45]: 345828.5089, [91]: 214508.6507, [137]: 41396.4063, [182]: 0 | Stats: min: 0, max: 376330.9661, sum: 2.69e+7, avg: 189265.6261"}
+{"id":"fixed_ast_bal","value":"fixed_ast_bal (183 values): [0]: 0, [45]: 355766.2973, [91]: 210745.341, [137]: 37633.0966, [182]: 0 | Stats: min: 0, max: 376330.9661, sum: 2.69e+7, avg: 189265.6261"}
 {"id":"strt_mo","value":16}
 {"id":"duration_mos","value":24}
 {"id":"hrampup.fct","value":"hrampup.fct (183 values): [0]: 0, [45]: 1, [91]: 1, [137]: 1, [182]: 0 | Stats: min: 0, max: 1, sum: 115.5, avg: 0.9094"}
@@ -184,7 +186,7 @@
 {"id":"recmtl","value":"recmtl (183 values): [0]: 0, [45]: 44.2106, [91]: 172.1531, [137]: 229.0102, [182]: 0 | Stats: min: 0, max: 243.2478, sum: 18790.1873, avg: 147.9542"}
 {"id":"agreed_generation_prd","value":"agreed_generation_prd (183 values): [0]: 12500, [45]: 12500, [91]: 37500, [137]: 37500, [182]: 37500 | Stats: min: 12500, max: 37500, sum: 5.66e+6, avg: 30942.623"}
 {"id":"generation_sold","value":"generation_sold (183 values): [0]: 0, [45]: 0, [91]: 37500, [137]: 0, [182]: 0 | Stats: min: 0, max: 37500, sum: 2.25e+6, avg: 37500"}
-{"id":"incremental_uplft","value":"incremental_uplft (183 values): [0]: 0, [45]: 0, [91]: 2649.3259, [137]: 0, [182]: 0 | Stats: min: 0, max: 2924.3601, sum: 147545.9983, avg: 2459.1"}
+{"id":"pwa_revenue","value":"pwa_revenue (183 values): [0]: 0, [45]: 0, [91]: 2649.3259, [137]: 0, [182]: 0 | Stats: min: 0, max: 2924.3601, sum: 147545.9983, avg: 2459.1"}
 {"id":"revenue","value":"revenue (183 values): [0]: 0, [45]: 2927.7923, [91]: 14049.9576, [137]: 15165.9236, [182]: 0 | Stats: min: 0, max: 16108.7941, sum: 1.39e+6, avg: 10959.8695"}
 {"id":"apcres_cst","value":"apcres_cst (183 values): [0]: 0, [45]: 99.4738, [91]: 387.3445, [137]: 515.273, [182]: 0 | Stats: min: 0, max: 547.3076, sum: 42277.9214, avg: 332.897"}
 {"id":"inactash_cst","value":"inactash_cst (183 values): [0]: 0, [45]: 75.158, [91]: 292.6603, [137]: 389.3173, [182]: 0 | Stats: min: 0, max: 413.5213, sum: 31943.3184, avg: 251.5222"}
@@ -215,19 +217,19 @@
 {"id":"movement_ap","value":"movement_ap (183 values): [0]: 0, [45]: 5.6333, [91]: 0, [137]: 52.0569, [182]: 0 | Stats: min: -2245.8658, max: 1033.0116, sum: 0, avg: 0"}
 {"id":"net_working_cap_movement","value":"net_working_cap_movement (183 values): [0]: 0, [45]: -88.8116, [91]: 0, [137]: -71.2433, [182]: 0 | Stats: min: -296.0388, max: 3123.7322, sum: -0, avg: -0"}
 {"id":"op_cashflow","value":"op_cashflow (183 values): [0]: 0, [45]: 2664.3489, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 2753.1605, sum: 38533.6649, avg: 1482.064"}
-{"id":"sources_of_cash","value":"sources_of_cash (183 values): [0]: 0, [45]: 8119.4933, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 31812.6685, sum: 355419.6651, avg: 8265.5736"}
-{"id":"uses_of_cash","value":"uses_of_cash (183 values): [0]: 0, [45]: 8119.4933, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 31812.6685, sum: 355419.6651, avg: 8265.5736"}
+{"id":"sources_of_cash","value":"sources_of_cash (183 values): [0]: 0, [45]: 9937.7884, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 31811.6306, sum: 376330.9661, avg: 8751.8829"}
+{"id":"uses_of_cash","value":"uses_of_cash (183 values): [0]: 0, [45]: 9937.7884, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 31811.6306, sum: 376330.9661, avg: 8751.8829"}
 {"id":"summ_sources_chk","value":0}
 {"id":"sources_chk","value":"sources_chk (391 values): [0]: 0, [97]: 0, [195]: , [293]: , [390]:  | Stats: min: 0, max: 0, sum: 0"}
-{"id":"sources_difference","value":"sources_difference (183 values): [0]: 0, [45]: 0, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 0, sum: 0, avg: 0"}
-{"id":"cashflow_avail_senior_debt","value":"cashflow_avail_senior_debt (297 values): [0]: 0, [74]: 8373.4606, [148]: 3123.7322, [222]: 0, [296]: 0 | Stats: min: 0, max: 10245.1239, sum: 845432.5871, avg: 7828.0795"}
-{"id":"cashflow_avail_senior_debt_2","value":"cashflow_avail_senior_debt_2 (183 values): [0]: 0, [45]: -0, [91]: 9281.5766, [137]: 8691.6786, [182]: 0 | Stats: min: -0, max: 10245.1239, sum: 845432.5878, avg: 5953.7506"}
+{"id":"sources_difference","value":"sources_difference (183 values): [0]: 0, [45]: 0, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 0, sum: 0"}
+{"id":"cashflow_avail_senior_debt","value":"cashflow_avail_senior_debt (297 values): [0]: 0, [74]: 8373.4606, [148]: 3123.7322, [222]: 0, [296]: 0 | Stats: min: 0, max: 10245.1239, sum: 845432.5871, avg: 8370.6197"}
+{"id":"cashflow_avail_senior_debt_2","value":"cashflow_avail_senior_debt_2 (183 values): [0]: 0, [45]: 0, [91]: 9281.5766, [137]: 8691.6786, [182]: 0 | Stats: min: -0, max: 10245.1239, sum: 845432.5872, avg: 6082.2488"}
 {"id":"cashflow_avail_senior_debt_1","value":"cashflow_avail_senior_debt_1 (114 values): [0]: 0, [28]: 0, [57]: 0, [85]: 0, [113]: 0 | Stats: min: 0, max: 0, sum: 0"}
-{"id":"prj_cst_financed","value":"prj_cst_financed (183 values): [0]: 0, [45]: 5455.1444, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 31812.6685, sum: 316886.0002, avg: 7369.4419"}
+{"id":"prj_cst_financed","value":"prj_cst_financed (183 values): [0]: 0, [45]: 7273.4395, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 31811.6306, sum: 337797.3012, avg: 7855.7512"}
 {"id":"Solve!F44","value":[0,0]}
-{"id":"cashflow_avail_senior_debt_chk_2","value":"cashflow_avail_senior_debt_chk_2 (183 values): [0]: 0, [45]: 0, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 0, sum: 0.0007, avg: 0"}
+{"id":"cashflow_avail_senior_debt_chk_2","value":"cashflow_avail_senior_debt_chk_2 (183 values): [0]: 0, [45]: 0, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 0, sum: 0.0001, avg: 0"}
 {"id":"cashflow_avail_senior_debt_chk_1","value":"cashflow_avail_senior_debt_chk_1 (114 values): [0]: 0, [28]: 0, [57]: 0, [85]: 0, [113]: 0 | Stats: min: 0, max: 0, sum: 0"}
-{"id":"prj_cst_financed_chk","value":"prj_cst_financed_chk (183 values): [0]: 0, [45]: 0, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 0, sum: 0, avg: 0"}
+{"id":"prj_cst_financed_chk","value":"prj_cst_financed_chk (183 values): [0]: 0, [45]: 0, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 0, sum: 0"}
 {"id":"summ_Solve!F44","value":0}
 {"id":"counter","value":"counter (391 values): [0]: 1, [97]: 98, [195]: 196, [293]: 294, [390]: 391 | Stats: min: 1, max: 391, sum: 76636, avg: 196"}
 {"id":"tot","value":183}
@@ -258,6 +260,8 @@
 {"id":"hpwatermflag.end_dt","value":"31 Dec 44 "}
 {"id":"hpwatermflag.end","value":"hpwatermflag.end (183 values): [0]: 0, [45]: 0, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 1, sum: 1, avg: 1"}
 {"id":"pwa_term_flag","value":"pwa_term_flag (183 values): [0]: 0, [45]: 0, [91]: 1, [137]: 0, [182]: 0 | Stats: min: 0, max: 1, sum: 60, avg: 1"}
+{"id":"strt_dt","value":"31 Dec 28 "}
+{"id":"lst_12_mos_const_flag","value":"lst_12_mos_const_flag (183 values): [0]: 0, [45]: 1, [91]: 0, [137]: 0, [182]: 0 | Stats: min: 0, max: 1, sum: 12, avg: 1"}
 {"id":"mo","value":"mo (183 values): [0]: 0, [45]: 0, [91]: 1, [137]: 0, [182]: 0 | Stats: min: 0, max: 1, sum: 37, avg: 1"}
 {"id":"end_mo","value":12}
 {"id":"end_fin_flag","value":"end_fin_flag (183 values): [0]: 0, [45]: 0, [91]: 1, [137]: 0, [182]: 0 | Stats: min: 0, max: 1, sum: 37, avg: 1"}

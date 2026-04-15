@@ -43,12 +43,18 @@
     /// @unit $ 000s
     calc[n] o_m_mob = {{o_m_mob_amt_1}}*{{hendconstprdflag.constprd[n]}}
 
+  ## h_pwa_capex: PWA capex
+
+    /// @label PWA capex
+    /// @unit $ 000s
+    calc[n] pwa_capex = {{pwa_capex_amt_1}}/{{months_in_year}}*{{mos_mdl_prd[n]}}*{{lst_12_mos_const_flag[n]}}
+
 
 # h_const_cst: CONSTRUCTION COSTS
 
   /// @label Construction costs POS
   /// @unit $ 000s
-  calc[n] pos = SUM(§{{epc_base_cost[n]}}, {{epc_contingency[n]}}, {{spv_cst_dur_const[n]}}, {{hinsurance.cst[n]}}, {{devcst[n]}}, {{development_fee[n]}}, {{o_m_mob[n]}}§)
+  calc[n] pos = SUM(§{{epc_base_cost[n]}}, {{epc_contingency[n]}}, {{spv_cst_dur_const[n]}}, {{hinsurance.cst[n]}}, {{devcst[n]}}, {{development_fee[n]}}, {{o_m_mob[n]}}, {{pwa_capex[n]}}§)
 
   /// @label Construction costs
   /// @unit $ 000s

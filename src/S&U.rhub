@@ -11,7 +11,7 @@
 
   /// @label Uses of cash
   /// @unit $ 000s
-  calc[n] uses_of_cash = SUM(§{{epc_base_cost[n]}}, {{epc_contingency[n]}}, {{spv_cst_dur_const[n]}}, {{hinsurance.cst[n]}}, {{devcst[n]}}, {{development_fee[n]}}, {{o_m_mob[n]}}, {{upfront_fee[n]}}, {{commitment_fee[n]}}, {{int_dur_const[n]}}§)
+  calc[n] uses_of_cash = SUM(§{{epc_base_cost[n]}}, {{epc_contingency[n]}}, {{spv_cst_dur_const[n]}}, {{hinsurance.cst[n]}}, {{devcst[n]}}, {{development_fee[n]}}, {{o_m_mob[n]}}, {{pwa_capex[n]}}, {{upfront_fee[n]}}, {{commitment_fee[n]}}, {{int_dur_const[n]}}§)
 
   /// @label Sources and uses check
   /// @unit check

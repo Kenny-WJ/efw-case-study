@@ -76,13 +76,13 @@
 
     /// @label PWA revenue
     /// @unit $ 000s
-    calc[n] incremental_uplft = {{generation_sold[n]}}*{{prc_uplft_real_1}}*{{fct[n]}}/{{units_thousand}}
+    calc[n] pwa_revenue = {{generation_sold[n]}}*{{prc_uplft_real_1}}*{{fct[n]}}/{{units_thousand}}
 
   ## h_total_revenue: Total revenue
 
     /// @label Revenue
     /// @unit $ 000s
-    calc[n] revenue = SUM(§{{gf[n]}}, {{net_grdsls[n]}}, {{embbnft[n]}}, {{recmtl[n]}}, {{incremental_uplft[n]}}§)
+    calc[n] revenue = SUM(§{{gf[n]}}, {{net_grdsls[n]}}, {{embbnft[n]}}, {{recmtl[n]}}, {{pwa_revenue[n]}}§)
 
 
 # h_direct_costs: DIRECT COSTS

@@ -152,6 +152,16 @@
     /// @unit flag
     calc[n] pwa_term_flag = {{pwa_term_flag[n-1]}}+{{frst_op_prd_flag[n]}}-{{hpwatermflag.end[n-1]}}
 
+  ## h_lst_12_mos_const_flag: Last 12 months of construction flag
+
+    /// @label Start of last 12 months of construction date
+    /// @unit date
+    calc strt_dt = EDATE({{constprd_dt}},-1*{{months_in_year}})
+
+    /// @label Last 12 months of construction flag
+    /// @unit flag
+    calc[n] lst_12_mos_const_flag = IF(AND({{end[n]}}>{{strt_dt}},{{end[n]}}<={{constprd_dt}}),1,0)
+
   ## h_escalation_prd_yr_end_flag: Escalation period year end flag
 
     /// @label Escalation year end month flag

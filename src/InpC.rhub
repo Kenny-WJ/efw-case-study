@@ -73,6 +73,10 @@
   /// @unit $ 000s
   input o_m_mob_amt_1 = [650]
 
+  /// @label PWA capex - base amount
+  /// @unit $ 000s
+  input pwa_capex_amt_1 = [22000]
+
 
 # h_generation_assumptions: GENERATION ASSUMPTIONS
 
@@ -363,23 +367,23 @@
 
     /// @label Pre-forecast period
     /// @unit label
-    input 1073 = [Pre-fcst]
+    input 1088 = [Pre-fcst]
 
     /// @label Financial Close
     /// @unit label
-    input 1074 = [Fin Close]
+    input 1089 = [Fin Close]
 
     /// @label Construction
     /// @unit label
-    input 1075 = [Construction]
+    input 1090 = [Construction]
 
     /// @label Operations
     /// @unit label
-    input 1076 = [Operations]
+    input 1091 = [Operations]
 
     /// @label Post ops
     /// @unit label
-    input 1077 = [Post ops]
+    input 1092 = [Post ops]
 
     /// @label Input row template for relocation macro
     /// @unit unit
