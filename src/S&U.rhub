@@ -1,0 +1,25 @@
+// HYBRID TIMELINE: MONTHLY (PERIODS 1-47) [2026-2029], then QUARTERLY (PERIODS 48-182) [2029-2063]
+
+# h_source_of_cash: SOURCE OF CASH
+
+  /// @label Sources of cash
+  /// @unit $ 000s
+  calc[n] sources_of_cash = SUM(§{{drwdn_dur_const[n]}}, {{op_cashflow[n]}}, {{senior_debt_drwdn[n]}}§)
+
+
+# h_uses_of_cash: USES OF CASH
+
+  /// @label Uses of cash
+  /// @unit $ 000s
+  calc[n] uses_of_cash = SUM(§{{epc_base_cost[n]}}, {{epc_contingency[n]}}, {{spv_cst_dur_const[n]}}, {{hinsurance.cst[n]}}, {{devcst[n]}}, {{development_fee[n]}}, {{o_m_mob[n]}}, {{upfront_fee[n]}}, {{commitment_fee[n]}}, {{int_dur_const[n]}}§)
+
+  /// @label Sources and uses check
+  /// @unit check
+  calc summ_sources_chk = IF(SUM({{sources_chk[:]}})<>0,1,0)
+
+  /// @label Sources and uses check
+  /// @unit check
+  calc[n] sources_chk = IF(ABS({{sources_of_cash[n]}}-{{uses_of_cash[n]}})>{{CHK_TOL[]}},1,0)
+
+  /// @label Sources and uses difference
+  calc[n] sources_difference = {{sources_of_cash[n]}}-{{uses_of_cash[n]}}

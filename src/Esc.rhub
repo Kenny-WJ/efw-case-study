@@ -1,0 +1,7 @@
+// HYBRID TIMELINE: MONTHLY (PERIODS 1-47) [2026-2029], then QUARTERLY (PERIODS 48-182) [2029-2063]
+
+# h_cpi_escalation: CPI ESCALATION
+
+  /// @label CPI escalation factor
+  /// @unit factor
+  calc[n] fct = (1+{{cpi_rt_1}})^INT(YEARFRAC({{fin_close_dt_1}},{{end[n]}}))

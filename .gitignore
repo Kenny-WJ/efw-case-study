@@ -1,0 +1,13 @@
+~$*
+.cellori/
+.claude/
+.codex/
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.svg
+*.webp
+*.tiff
+*.pdf

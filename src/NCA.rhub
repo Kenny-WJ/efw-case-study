@@ -1,0 +1,33 @@
+// HYBRID TIMELINE: MONTHLY (PERIODS 1-47) [2026-2029], then QUARTERLY (PERIODS 48-182) [2029-2063]
+
+# h_capitalized_financing_cst: CAPITALIZED FINANCING COSTS
+
+  /// @label Total capitalized financing costs
+  /// @unit $ 000s
+  calc hcapitalizedfinancingcst.tot = SUM({{hfinancingcosts.pos[:]}})
+
+
+# h_depr_fixed_ast: DEPRECIATION OF FIXED ASSET
+
+  /// @label Total asset cost
+  /// @unit $ 000s
+  calc tot_cst = {{sum_pos}}+{{hcapitalizedfinancingcst.tot}}
+
+  /// @label Fixed asset depreciation POS
+  /// @unit $ 000s
+  calc[n] hdeprfixedast.pos = {{tot_cst}}/{{useful_life_ast_1}}/{{num_prds_yr}}*{{useful_life_ast_flag[n]}}
+
+  /// @label Fixed asset depreciation
+  /// @unit $ 000s
+  calc[n] fixed_ast_depr = -1*{{hdeprfixedast.pos[n]}}
+
+
+# h_fixed_ast_bal: FIXED ASSET BALANCE
+
+  /// @label Fixed asset balance BEG
+  /// @unit $ 000s
+  calc[n] hfixedastbal.beg = {{fixed_ast_bal[n-1]}}
+
+  /// @label Fixed asset balance
+  /// @unit $ 000s
+  calc[n] fixed_ast_bal = {{hfixedastbal.beg[n]}}+{{pos[n]}}+{{hfinancingcosts.pos[n]}}-{{hdeprfixedast.pos[n]}}

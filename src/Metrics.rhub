@@ -1,0 +1,82 @@
+// HYBRID TIMELINE: MONTHLY (PERIODS 1-47) [2026-2029], then QUARTERLY (PERIODS 48-182) [2029-2063]
+
+# h_avg_cst_debt: AVERAGE COST OF DEBT
+
+  ## h_senior_cashflows_dur_const: Senior debt cashflows during construction
+
+    /// @label Senior debt cashflows DC
+    /// @unit $ 000s
+    calc[n] dc = -1*{{senior_debt_drwdn[n]}}+{{hfinancingcosts.pos[n]}}+{{flag[n]}}*{{small_negative_val_irr}}
+
+  ## h_senior_svc: Senior debt service
+
+    /// @label Senior debt service
+    /// @unit $ 000s
+    calc[n] senior_debt_svc = {{hsculptedprincipalrpmt.pos[n]}}+{{hrpmtprdint.pos[n]}}
+
+  ## h_avg_cst_debt_1: Average cost of debt
+
+    /// @label Senior debt total cashflows
+    /// @unit $ 000s
+    calc[n] senior_tot_cashflows = {{dc[n]}}+{{senior_debt_svc[n]}}
+
+    /// @label Average cost of debt
+    /// @unit %
+    calc avg_cst_debt = XIRR({{senior_tot_cashflows[:]}},{{end[:]}})
+
+
+# h_debt_svc_cover_rt: DEBT SERVICE COVER RATIO
+
+  ## h_n_3_mo_historic_dscr: 3 month historic DSCR
+
+    /// @label 3 month historic DSCR
+    /// @unit x
+    calc[n] n_3_mo_historic_dscr = IF({{senior_debt_ln_life_flag[n]}}=1,{{hcfstatement.cashflow_avail_senior_debt[n]}}/{{senior_debt_svc[n]}},"na")
+
+    /// @label Minimum historic 3 month DSCR
+    /// @unit x
+    calc min = MINIFS({{n_3_mo_historic_dscr[:]}},{{n_3_mo_historic_dscr[:]}},">0")
+
+    /// @label Average historic 3 month DSCR
+    /// @unit x
+    calc avg = AVERAGEIFS({{n_3_mo_historic_dscr[:]}},{{senior_debt_ln_life_flag[:]}},1)
+
+
+# h_llcr: LLCR
+
+  ## h_cfads_over_senior_debt_term: CFADS over senior debt term
+
+    /// @label CFADS restricted to senior debt term
+    /// @unit $ 000s
+    calc[n] restricted = {{cashflow_avail_senior_debt_2[n]}}*{{senior_debt_ln_life_flag[n]}}
+
+  ## h_pv_of_cfads: PV of CFADS
+
+    /// @label Rolling PV of CFADS over senior debt term
+    /// @unit $ 000s
+    calc[n] rolling_over_senior_debt_term = ({{restricted[n+1]}}+{{rolling_over_senior_debt_term[n+1]}})/(1+{{prd_disc_rt[n+1]}})
+
+  ## h_llcr_ratio: LLCR ratio
+
+    /// @label Rolling LLCR
+    /// @unit x
+    calc[n] rolling_llcr = IF({{llcr_date_flag[n]}}=1,{{rolling_over_senior_debt_term[n]}}/{{bal[n]}},"na")
+
+    /// @label Minimum LLCR
+    /// @unit x
+    calc minimum_llcr = MINIFS({{rolling_llcr[:]}},{{rolling_llcr[:]}},">0")
+
+
+# h_equity_irr: EQUITY IRR
+
+  /// @label Blended returns to equity
+  /// @unit $ 000s
+  calc[n] blended_returns = SUM(§{{pd_pos[n]}}, {{shcap_redemption_pos[n]}}§)
+
+  /// @label Equity total cashflows for IRR
+  /// @unit $ 000s
+  calc[n] tot_cashflows = {{calc[n]}}+{{blended_returns[n]}}
+
+  /// @label Blended equity IRR
+  /// @unit %
+  calc blended = XIRR({{tot_cashflows[:]}},{{end[:]}})

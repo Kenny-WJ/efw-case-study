@@ -1,0 +1,70 @@
+{
+  "workbook": {
+    "headerLevel1Column": 1,
+    "headerLevel2Column": 2,
+    "headerLevel3Column": 3,
+    "labelColumn": 5,
+    "unitsColumn": 7,
+    "constantColumn": 6,
+    "totalColumn": 8,
+    "timeseriesStartColumn": 10,
+    "startRow": 7,
+    "modelPeriodEndRow": 2,
+    "timelineLabelRow": 3,
+    "highlightLinks": true,
+    "linkColorImport": "#0000FF",
+    "linkColorExport": "#FF0000",
+    "headerLevel1Uppercase": true,
+    "headerLevel1Bold": true,
+    "headerLevel1Underline": false,
+    "headerLevel2Uppercase": false,
+    "headerLevel2Bold": true,
+    "headerLevel2Underline": false,
+    "headerLevel3Uppercase": false,
+    "headerLevel3Bold": false,
+    "headerLevel3Underline": true,
+    "numberFormatPercent": "0.00% ;-0.00% _);\"- \";\" \"@\" \"",
+    "numberFormatFactor": "#,##0.0000_);(#,##0.0000);\"-  \";\" \"@\" \"",
+    "numberFormatDate": "dd mmm yy_);(###0);\"-  \";\" \"@\" \"",
+    "numberFormatNormal": "#,##0_);(#,##0);\"-  \";\" \"@"
+  },
+  "sheets": [
+    {
+      "name": "InpC",
+      "type": "input-const",
+      "startRow": 11,
+      "highlightLinks": false,
+      "activeScenarioRange": "ActiveScenario",
+      "inputTemplateNamedRange": "InputRowTemplate"
+    },
+    {
+      "name": "InpS",
+      "type": "input-series",
+      "highlightLinks": false
+    },
+    {
+      "name": "FS Qtr",
+      "type": "financial-statements",
+      "highlightLinks": false
+    },
+    {
+      "name": "FS Ann",
+      "type": "rollup",
+      "highlightLinks": false,
+      "targetSheet": "FS Qtr",
+      "modelPeriodStartRange": "ModelPeriodStartAnn",
+      "modelPeriodEndRange": "ModelPeriodEndAnn",
+      "modelPeriodYearRange": "ModelPeriodYearAnn",
+      "modelColumnCounterRange": "ModelColumnCounterAnn"
+    },
+    {
+      "name": "Output",
+      "type": "ignored"
+    },
+    {
+      "name": "Check",
+      "type": "check",
+      "highlightLinks": false
+    }
+  ]
+}

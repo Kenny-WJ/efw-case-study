@@ -1,0 +1,59 @@
+// HYBRID TIMELINE: MONTHLY (PERIODS 1-47) [2026-2029], then QUARTERLY (PERIODS 48-182) [2029-2063]
+
+# h_epc_cost: EPC COST
+
+  /// @label EPC base cost
+  /// @unit $ 000s
+  calc[n] epc_base_cost = {{epc_cost_1}}*{{cst[n]}}
+
+  /// @label EPC contingency
+  /// @unit $ 000s
+  calc[n] epc_contingency = {{epc_spent_contg_1}}*{{epc_base_cost[n]}}
+
+
+# h_oth_const_coss: OTHER CONSTRUCTION COSS
+
+  ## h_spv_cst_dur: SPV costs during construction
+
+    /// @label SPV costs during construction
+    /// @unit $ 000s
+    calc[n] spv_cst_dur_const = {{ann_spv_1}}/{{months_in_year}}*{{hconstprdflag.constprd[n]}}
+
+  ## h_insurance: Construction insurance
+
+    /// @label Construction insurance cost
+    /// @unit $ 000s
+    calc[n] hinsurance.cst = {{const_insurance_amt_1}}*{{fin_close_dt_flag[n]}}
+
+  ## h_devcst: Development costs
+
+    /// @label Development costs
+    /// @unit $ 000s
+    calc[n] devcst = {{devcst_amt_1}}*{{fin_close_dt_flag[n]}}
+
+  ## h_development_fee: Development fee
+
+    /// @label Development fee
+    /// @unit $ 000s
+    calc[n] development_fee = {{dev_fee_amt_1}}*{{fin_close_dt_flag[n]}}
+
+  ## h_o_m_mob: O&M mobilisation
+
+    /// @label O&M mobilisation
+    /// @unit $ 000s
+    calc[n] o_m_mob = {{o_m_mob_amt_1}}*{{hendconstprdflag.constprd[n]}}
+
+
+# h_const_cst: CONSTRUCTION COSTS
+
+  /// @label Construction costs POS
+  /// @unit $ 000s
+  calc[n] pos = SUM(§{{epc_base_cost[n]}}, {{epc_contingency[n]}}, {{spv_cst_dur_const[n]}}, {{hinsurance.cst[n]}}, {{devcst[n]}}, {{development_fee[n]}}, {{o_m_mob[n]}}§)
+
+  /// @label Construction costs
+  /// @unit $ 000s
+  calc[n] const_cst = -1*{{pos[n]}}
+
+  /// @label Sum of Construction costs POS
+  /// @unit $ 000s
+  calc sum_pos = SUM({{pos[:]}})

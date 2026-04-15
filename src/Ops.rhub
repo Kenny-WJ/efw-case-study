@@ -1,0 +1,224 @@
+// HYBRID TIMELINE: MONTHLY (PERIODS 1-47) [2026-2029], then QUARTERLY (PERIODS 48-182) [2029-2063]
+
+# h_ramp_up: RAMP-UP
+
+  /// @label Ramp-up start month
+  /// @unit month
+  calc strt_mo = ({{ramp_up_strt_qtr_const_1}}-1)*{{length_op_prd}}+1
+
+  /// @label Ramp-up duration in months
+  /// @unit months
+  calc duration_mos = {{ramp_up_duration_1}}*{{length_op_prd}}
+
+  /// @label Ramp-up factor
+  /// @unit factor
+  calc[n] hrampup.fct = MIN(MAX(({{const_qtr_counter[n]}}-{{strt_mo}}+1)/{{duration_mos}},0),1)*MIN({{hconstprdflag.constprd[n]}}+{{op_prd_flag[n]}},1)
+
+
+# h_generation: GENERATION
+
+  /// @label Hours in period
+  /// @unit hours
+  calc[n] hours_in_period = {{days_in_period[n]}}*{{hours_in_day}}
+
+  /// @label Net generation
+  /// @unit MWh
+  calc[n] net_generation = {{plnt_net_capacity_1}}*{{plnt_avail_1}}*{{hours_in_period[n]}}*{{hrampup.fct[n]}}
+
+  /// @label Waste throughput
+  /// @unit tonnes
+  calc[n] wstthrpt = {{plnt_thrpt_1}}*{{plnt_avail_1}}*{{hours_in_period[n]}}*{{hrampup.fct[n]}}
+
+
+# h_revenue: REVENUE
+
+  ## h_gf: Gate fee revenue
+
+    /// @label Gate fee revenue
+    /// @unit $ 000s
+    calc[n] gf = {{wstthrpt[n]}}*{{gf_rt_real_1}}*{{fct[n]}}/{{units_thousand}}
+
+  ## h_grdsls: Grid sales revenue
+
+    /// @label Gross grid sales revenue
+    /// @unit $ 000s
+    calc[n] gr_grdsls = {{net_generation[n]}}*{{grdsls_rt_real_1}}*{{fct[n]}}/{{units_thousand}}
+
+    /// @label PPA cost
+    /// @unit $ 000s
+    calc[n] ppa_cost = {{gr_grdsls[n]}}*{{ppa_cst_pct_1}}
+
+    /// @label Net grid sales revenue
+    /// @unit $ 000s
+    calc[n] net_grdsls = {{gr_grdsls[n]}}-{{ppa_cost[n]}}
+
+  ## h_embbnft: Embedded benefits revenue
+
+    /// @label Embedded benefits revenue
+    /// @unit $ 000s
+    calc[n] embbnft = {{net_generation[n]}}*{{embbnft_rt_real_1}}*{{fct[n]}}/{{units_thousand}}
+
+  ## h_recmtl: Recovered materials revenue
+
+    /// @label Recovered materials revenue
+    /// @unit $ 000s
+    calc[n] recmtl = {{wstthrpt[n]}}*{{recovery_rate_1}}*{{recmtl_rt_real_1}}*{{fct[n]}}/{{units_thousand}}
+
+  ## h_total_revenue: Total revenue
+
+    /// @label Revenue
+    /// @unit $ 000s
+    calc[n] revenue = SUM(§{{gf[n]}}, {{net_grdsls[n]}}, {{embbnft[n]}}, {{recmtl[n]}}§)
+
+
+# h_direct_costs: DIRECT COSTS
+
+  ## h_apcres_disposal: APC residue disposal
+
+    /// @label APC residue cost
+    /// @unit $ 000s
+    calc[n] apcres_cst = {{wstthrpt[n]}}*{{apcres_rt_1}}*{{apcres_cntrprc_real_1}}*{{fct[n]}}/{{units_thousand}}
+
+  ## h_inactash_disposal: Inactive ash disposal
+
+    /// @label Inactive ash cost
+    /// @unit $ 000s
+    calc[n] inactash_cst = {{wstthrpt[n]}}*{{inactash_rt_1}}*{{inactash_cntrprc_real_1}}*{{fct[n]}}/{{units_thousand}}
+
+  ## h_o_m_fee: O&M fee
+
+    /// @label O&M fee
+    /// @unit $ 000s
+    calc[n] o_m_fee = {{o_m_fee_qtr_1}}*{{mos_mdl_prd[n]}}/{{length_op_prd}}*{{fct[n]}}*{{op_prd_flag[n]}}
+
+  ## h_reimbcst: Reimbursable costs
+
+    /// @label Reimbursable costs (incl. EPC markup)
+    /// @unit $ 000s
+    calc[n] reimbcst_incl_epc_markup = {{reimbcst_qtr_1}}*(1+{{epc_markup_reimbursables_1}})*{{mos_mdl_prd[n]}}/{{length_op_prd}}*{{fct[n]}}*{{op_prd_flag[n]}}
+
+  ## h_cntrdcnsm: Contracted consumables
+
+    /// @label Contracted consumables
+    /// @unit $ 000s
+    calc[n] cntrdcnsm = {{cntrdcnsm_1}}/{{num_prds_yr}}*{{mos_mdl_prd[n]}}/{{length_op_prd}}*{{fct[n]}}*{{op_prd_flag[n]}}
+
+  ## h_tot_dircst: Total direct costs
+
+    /// @label Direct costs
+    /// @unit $ 000s
+    calc[n] direct_costs = SUM(§{{apcres_cst[n]}}, {{inactash_cst[n]}}, {{o_m_fee[n]}}, {{reimbcst_incl_epc_markup[n]}}, {{cntrdcnsm[n]}}§)
+
+
+# h_overheads: OVERHEADS
+
+  ## h_overhead_items: Overhead items
+
+    /// @label Rates
+    /// @unit $ 000s
+    calc[n] rates = {{hoverheadassumptions.rates_1}}/{{num_prds_yr}}*{{mos_mdl_prd[n]}}/{{length_op_prd}}*{{fct[n]}}*{{op_prd_flag[n]}}
+
+    /// @label MSA
+    /// @unit $ 000s
+    calc[n] msa = {{hoverheadassumptions.msa_1}}/{{num_prds_yr}}*{{mos_mdl_prd[n]}}/{{length_op_prd}}*{{fct[n]}}*{{op_prd_flag[n]}}
+
+    /// @label Insurance
+    /// @unit $ 000s
+    calc[n] insurance = {{hoverheadassumptions.insurance_1}}/{{num_prds_yr}}*{{mos_mdl_prd[n]}}/{{length_op_prd}}*{{fct[n]}}*{{op_prd_flag[n]}}
+
+    /// @label Contingency
+    /// @unit $ 000s
+    calc[n] contingency = {{hoverheadassumptions.contingency_1}}/{{num_prds_yr}}*{{mos_mdl_prd[n]}}/{{length_op_prd}}*{{fct[n]}}*{{op_prd_flag[n]}}
+
+    /// @label Rent
+    /// @unit $ 000s
+    calc[n] rent = {{hoverheadassumptions.rent_1}}/{{num_prds_yr}}*{{mos_mdl_prd[n]}}/{{length_op_prd}}*{{fct[n]}}*{{op_prd_flag[n]}}
+
+    /// @label Legals and professional
+    /// @unit $ 000s
+    calc[n] legals_professional = {{hoverheadassumptions.legals_professional_1}}/{{num_prds_yr}}*{{mos_mdl_prd[n]}}/{{length_op_prd}}*{{fct[n]}}*{{op_prd_flag[n]}}
+
+    /// @label Water costs
+    /// @unit $ 000s
+    calc[n] water_costs = {{hoverheadassumptions.water_costs_1}}/{{num_prds_yr}}*{{mos_mdl_prd[n]}}/{{length_op_prd}}*{{fct[n]}}*{{op_prd_flag[n]}}
+
+    /// @label Fuel testing
+    /// @unit $ 000s
+    calc[n] fuel_testing = {{hoverheadassumptions.fuel_testing_1}}/{{num_prds_yr}}*{{mos_mdl_prd[n]}}/{{length_op_prd}}*{{fct[n]}}*{{op_prd_flag[n]}}
+
+    /// @label EA permit fee
+    /// @unit $ 000s
+    calc[n] ea_permit_fee = {{hoverheadassumptions.ea_permit_fee_1}}/{{num_prds_yr}}*{{mos_mdl_prd[n]}}/{{length_op_prd}}*{{fct[n]}}*{{op_prd_flag[n]}}
+
+    /// @label Annual audit
+    /// @unit $ 000s
+    calc[n] annual_audit = {{hoverheadassumptions.annual_audit_1}}/{{num_prds_yr}}*{{mos_mdl_prd[n]}}/{{length_op_prd}}*{{fct[n]}}*{{op_prd_flag[n]}}
+
+    /// @label Opex contingency
+    /// @unit $ 000s
+    calc[n] opex_contg = {{hoverheadassumptions.opex_contg_1}}/{{num_prds_yr}}*{{mos_mdl_prd[n]}}/{{length_op_prd}}*{{fct[n]}}*{{op_prd_flag[n]}}
+
+    /// @label Rent for surface water drainage
+    /// @unit $ 000s
+    calc[n] rnt_surface_water_drainage = {{hoverheadassumptions.rnt_surface_water_drainage_1}}/{{num_prds_yr}}*{{mos_mdl_prd[n]}}/{{length_op_prd}}*{{fct[n]}}*{{op_prd_flag[n]}}
+
+    /// @label Telephones/bank charges
+    /// @unit $ 000s
+    calc[n] telephones_bnkchrg = {{hoverheadassumptions.telephones_bnkchrg_1}}/{{num_prds_yr}}*{{mos_mdl_prd[n]}}/{{length_op_prd}}*{{fct[n]}}*{{op_prd_flag[n]}}
+
+    /// @label Bank charges
+    /// @unit $ 000s
+    calc[n] bank_charges = {{hoverheadassumptions.bank_charges_1}}/{{num_prds_yr}}*{{mos_mdl_prd[n]}}/{{length_op_prd}}*{{fct[n]}}*{{op_prd_flag[n]}}
+
+  ## h_total_overheads: Total overheads
+
+    /// @label Overheads
+    /// @unit $ 000s
+    calc[n] overheads = SUM(§{{rates[n]}}, {{msa[n]}}, {{insurance[n]}}, {{contingency[n]}}, {{rent[n]}}, {{legals_professional[n]}}, {{water_costs[n]}}, {{fuel_testing[n]}}, {{ea_permit_fee[n]}}, {{annual_audit[n]}}, {{opex_contg[n]}}, {{rnt_surface_water_drainage[n]}}, {{telephones_bnkchrg[n]}}, {{bank_charges[n]}}§)
+
+
+# h_tot_op_expd: TOTAL OPERATING EXPENDITURE
+
+  /// @label Total operating expenditure POS
+  /// @unit $ 000s
+  calc[n] htotopexpd.pos = {{direct_costs[n]}}+{{overheads[n]}}
+
+  /// @label Total operating expenditure
+  /// @unit $ 000s
+  calc[n] tot_op_expd = -1*{{htotopexpd.pos[n]}}
+
+
+# h_working_capital: WORKING CAPITAL
+
+  ## h_ar: Accounts receivable
+
+    /// @label Accounts receivable balance
+    /// @unit $ 000s
+    calc[n] ar_bal = {{revenue[n]}}*{{ar_lag_2}}/{{mos_mdl_prd[n]}}
+
+    /// @label Movement in accounts receivable
+    /// @unit $ 000s
+    calc[n] movement_ar = {{ar_bal[n]}}-{{ar_bal[n-1]}}
+
+  ## h_ap: Accounts payable
+
+    /// @label Accounts payable balance
+    /// @unit $ 000s
+    calc[n] ap_bal = {{htotopexpd.pos[n]}}*{{ap_lag_2}}/{{mos_mdl_prd[n]}}
+
+    /// @label Movement in accounts payable
+    /// @unit $ 000s
+    calc[n] movement_ap = {{ap_bal[n]}}-{{ap_bal[n-1]}}
+
+  ## h_net_movement: Net working capital movement
+
+    /// @label Net working capital movement
+    /// @unit $ 000s
+    calc[n] net_working_cap_movement = -{{movement_ar[n]}}+{{movement_ap[n]}}
+
+
+# h_net_rev_dur_const: NET REVENUE DURING CONSTRUCTION
+
+  /// @label Operating cashflow during construction
+  /// @unit $ 000s
+  calc[n] op_cashflow = {{hcfstatement.op_cashflow[n]}}*{{hconstprdflag.constprd[n]}}

@@ -1,0 +1,199 @@
+// HYBRID TIMELINE: MONTHLY (PERIODS 1-47) [2026-2029], then QUARTERLY (PERIODS 48-182) [2029-2063]
+
+# h_time_ruler: TIME RULER
+
+  ## h_frst_mdl_column: First model column
+
+    /// @label Model column counter
+    /// @unit counter
+    calc[n] counter = {{counter[n-1]}}+1
+
+    /// @label Model column total
+    /// @unit columns
+    calc tot = MAX({{counter[:]}})
+
+    /// @label First model column flag
+    /// @unit flag
+    calc[n] flag = IF({{counter[n]}}=1,1,0)
+
+  ## h_mos_mdl_prd: Months per model period
+
+    /// @label Number of monthly periods
+    /// @unit months
+    calc num_mo_prds = ROUND(YEARFRAC(EOMONTH({{frst_dt_time_rulers_1}},-1)+1,EOMONTH({{constprd_dt}},0))*{{months_in_year}},0)
+
+    /// @label Monthly period flag
+    /// @unit flag
+    calc[n] mo_flag = IF({{num_mo_prds}}>={{counter[n]}},1,0)
+
+    /// @label Primary timeline period flag
+    /// @unit flag
+    calc[n] primary_tmln_flag = 1-{{mo_flag[n]}}
+
+    /// @label Months per model period
+    /// @unit months
+    calc[n] mos_mdl_prd = ({{mo_flag[n]}}*1)+{{length_op_prd}}*{{primary_tmln_flag[n]}}
+
+  ## h_mdl_prd_strtdt: Model period start date
+
+    /// @label Model period beginning
+    /// @unit date
+    calc[n] beg = IF({{flag[n]}}=1,{{frst_dt_time_rulers_1}},EDATE({{beg[n-1]}},{{mos_mdl_prd[n-1]}}))
+
+  ## h_mdl_prd_enddt: Model period end date
+
+    /// @label Model period ending
+    /// @unit date
+    calc[n] end = EOMONTH({{beg[n]}},{{mos_mdl_prd[n]}}-1)
+
+
+# h_flags: FLAGS
+
+  ## h_fin_close_dt_flag: Financial close date flag
+
+    /// @label Financial close date flag
+    /// @unit flag
+    calc[n] fin_close_dt_flag = IF(AND({{end[n-1]}}<{{fin_close_dt_1}},{{end[n]}}>={{fin_close_dt_1}}),1,0)
+
+  ## h_frst_constprd_flag: First construction period flag
+
+    /// @label First construction period flag
+    /// @unit flag
+    calc[n] constprd = {{fin_close_dt_flag[n-1]}}
+
+  ## h_end_constprd_flag: End of construction period flag
+
+    /// @label End of construction period date
+    /// @unit date
+    calc constprd_dt = EOMONTH({{fin_close_dt_1}},{{constprd_length_2}})
+
+    /// @label End of construction period flag
+    /// @unit flag
+    calc[n] hendconstprdflag.constprd = IF(AND({{end[n-1]}}<{{constprd_dt}},{{end[n]}}>={{constprd_dt}}),1,0)
+
+  ## h_constprd_flag: Construction period flag
+
+    /// @label Construction period flag
+    /// @unit flag
+    calc[n] hconstprdflag.constprd = {{hconstprdflag.constprd[n-1]}}+{{constprd[n]}}-{{hendconstprdflag.constprd[n-1]}}
+
+  ## h_frst_op_prd_flag: First operating period flag
+
+    /// @label First operating period flag
+    /// @unit flag
+    calc[n] frst_op_prd_flag = {{hendconstprdflag.constprd[n-1]}}
+
+  ## h_lst_op_prd_flag: Last operating period flag
+
+    /// @label End of operating period
+    /// @unit date
+    calc hlstopprdflag.end = EOMONTH({{constprd_dt}},(({{length_of_ppa}}+{{cntr_extension}})*{{months_in_year}}))
+
+    /// @label Last operating period flag 
+    /// @unit flag
+    calc[n] lst_op_prd_flag = IF({{end[n]}}={{hlstopprdflag.end}},1,0)
+
+  ## h_op_prd_flag: Operating period flag
+
+    /// @label Operating period flag
+    /// @unit flag
+    calc[n] op_prd_flag = {{op_prd_flag[n-1]}}+{{frst_op_prd_flag[n]}}-{{lst_op_prd_flag[n-1]}}
+
+  ## h_frst_post_op_prd_flag: First post operating period flag
+
+    /// @label First post operating period flag
+    calc[n] frst_post_op_prd_flag = {{lst_op_prd_flag[n-1]}}
+
+  ## h_senior_debt_ln_life_flag: Senior debt loan life flag
+
+    /// @label End of senior debt loan life date
+    /// @unit date
+    calc end_dt = EOMONTH({{constprd_dt}},({{loan_life_1}}*{{months_in_year}}))
+
+    /// @label End of senior debt loan life flag
+    /// @unit flag
+    calc[n] hseniordebtlnlifeflag.end = IF({{end[n]}}={{end_dt}},1,0)
+
+    /// @label Senior debt loan life flag
+    /// @unit flag
+    calc[n] senior_debt_ln_life_flag = {{senior_debt_ln_life_flag[n-1]}}+{{frst_op_prd_flag[n]}}-{{hseniordebtlnlifeflag.end[n-1]}}
+
+  ## h_llcr_date_flag: LLCR date flag
+
+    /// @label LLCR date flag
+    /// @unit flag
+    calc[n] llcr_date_flag = {{senior_debt_ln_life_flag[n+1]}}
+
+  ## h_useful_life_ast_flag: Useful life of asset flag
+
+    /// @label End of useful life of asset
+    /// @unit date
+    calc end_1 = EOMONTH({{constprd_dt}},({{useful_life_ast_1}}*{{months_in_year}}))
+
+    /// @label End of useful life of asset flag
+    /// @unit flag
+    calc[n] end_2 = IF({{end[n]}}={{end_1}},1,0)
+
+    /// @label Useful life of asset flag
+    /// @unit flag
+    calc[n] useful_life_ast_flag = {{useful_life_ast_flag[n-1]}}+{{frst_op_prd_flag[n]}}-{{end_2[n-1]}}
+
+  ## h_escalation_prd_yr_end_flag: Escalation period year end flag
+
+    /// @label Escalation year end month flag
+    calc[n] mo = IF(MONTH({{end[n]}})={{escalation_prd_end_mo}},1,0)
+
+  ## h_contract_year: Contract year
+
+    /// @label Contract year end month
+    /// @unit month
+    calc end_mo = MONTH({{constprd_dt}})
+
+    /// @label End of financial year flag
+    calc[n] end_fin_flag = IF(MONTH({{end[n]}})={{fin_yr_end_mo_num}},1,0)
+
+    /// @label Financial year end applicable to period
+    /// @unit date
+    calc[n] fin_end_applicable_prd = IF({{flag[n]}}=1,{{fin_yr_enddt_frst_mdl_prd_1}},IF({{end_fin_flag[n-1]}}=1,EOMONTH({{fin_end_applicable_prd[n-1]}},12),{{fin_end_applicable_prd[n-1]}}))
+
+    /// @label Financial year
+    /// @unit year #
+    calc[n] financial_year = YEAR({{fin_end_applicable_prd[n]}})
+
+  ## h_timeline_label_1: Timeline label
+
+    /// @label Timeline label counter
+    /// @unit counter
+    calc[n] htimelinelabel1.counter = {{htimelinelabel1.counter[n-1]}}+MAX(§{{flag[n]}}, {{fin_close_dt_flag[n]}}, {{constprd[n]}}, {{frst_op_prd_flag[n]}}, {{frst_post_op_prd_flag[n]}}§)
+
+
+# h_counters_prd_numbers: COUNTERS / PERIOD NUMBERS
+
+  ## h_period_number: Period number
+
+    /// @label Contract period number
+    calc[n] cntr = {{cntr[n-1]}}+{{op_prd_flag[n]}}
+
+    /// @label Contract period quarter
+    /// @unit counter
+    calc[n] cntr_qtr = IF({{cntr_qtr[n-1]}}={{num_prds_yr}},1,{{cntr_qtr[n-1]}}+1)*{{op_prd_flag[n]}}
+
+  ## h_cntr_yr_num: Contract year number
+
+    /// @label Contract year number
+    /// @unit counter
+    calc[n] cntr_yr_num = ({{cntr_yr_num[n-1]}}+{{end_fin_flag[n-1]}})*{{op_prd_flag[n]}}
+
+
+# h_const_qtr_counter: CONSTRUCTION QUARTER COUNTER
+
+  /// @label Construction quarter counter
+  /// @unit counter
+  calc[n] const_qtr_counter = {{const_qtr_counter[n-1]}}+{{hconstprdflag.constprd[n]}}
+
+
+# h_days_in_period: DAYS IN PERIOD
+
+  /// @label Days in period
+  /// @unit days
+  calc[n] days_in_period = {{end[n]}}-{{beg[n]}}+1

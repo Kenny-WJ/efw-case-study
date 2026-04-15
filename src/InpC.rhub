@@ -1,0 +1,368 @@
+
+
+# h_timing_assumptions: TIMING ASSUMPTIONS
+
+  /// @label First date of time rulers
+  /// @unit date
+  input frst_dt_time_rulers_1 = [01 Jan 2026 ]
+
+  /// @label Financial year end date of first model period
+  /// @unit date
+  input fin_yr_enddt_frst_mdl_prd_1 = [31 Dec 2026 ]
+
+  /// @label Financial year end month number
+  /// @unit month #
+  input fin_yr_end_mo_num = [12]
+
+  /// @label Length of operating period
+  /// @unit months
+  input length_op_prd = [3]
+
+  /// @label Escalation period end month
+  /// @unit month
+  input escalation_prd_end_mo = [12]
+
+  /// @label Financial close date
+  /// @unit date
+  input fin_close_dt_1 = [30 Jun 2026 ]
+
+  /// @label Construction period length
+  /// @unit months
+  input constprd_length_2 = [42]
+
+  /// @label Length of PPA
+  /// @unit years
+  input length_of_ppa = [25]
+
+  /// @label Extend PPA in the event of delay
+  /// @unit 1 = yes, 0 = no
+  input extend_ppa_event_dly = [0]
+
+  /// @label Contract extension
+  /// @unit years
+  input cntr_extension = [0]
+
+
+# h_project_costs: PROJECT COSTS
+
+  /// @label EPC cost
+  /// @unit $ 000s
+  input epc_cost_1 = [300000]
+
+  /// @label EPC spent contingency
+  /// @unit %
+  input epc_spent_contg_1 = [0.05]
+
+  /// @label Annual SPV costs
+  /// @unit $ 000s p.a.
+  input ann_spv_1 = [1200]
+
+  /// @label Construction insurance - base amount
+  /// @unit $ 000s
+  input const_insurance_amt_1 = [850]
+
+  /// @label Development costs - base amount
+  /// @unit $ 000s
+  input devcst_amt_1 = [2200]
+
+  /// @label Development fee - base amount
+  /// @unit $ 000s
+  input dev_fee_amt_1 = [0]
+
+  /// @label O&M mobilisation - base amount
+  /// @unit $ 000s
+  input o_m_mob_amt_1 = [650]
+
+
+# h_generation_assumptions: GENERATION ASSUMPTIONS
+
+  /// @label Plant net capacity
+  /// @unit MW
+  input plnt_net_capacity_1 = [28.5]
+
+  /// @label Plant throughput
+  /// @unit tonnes/hr
+  input plnt_thrpt_1 = [31]
+
+  /// @label Plant availability
+  /// @unit %
+  input plnt_avail_1 = [0.89]
+
+  /// @label Ramp-up start quarter (construction)
+  /// @unit quarter
+  input ramp_up_strt_qtr_const_1 = [6]
+
+  /// @label Ramp-up duration
+  /// @unit quarters
+  input ramp_up_duration_1 = [8]
+
+
+# h_escalation_assumptions: ESCALATION ASSUMPTIONS
+
+  /// @label CPI escalation rate
+  /// @unit % p.a.
+  input cpi_rt_1 = [0.025]
+
+
+# h_rev_assumptions: REVENUE ASSUMPTIONS
+
+  /// @label Gate fee rate (real)
+  /// @unit $/tonne
+  input gf_rt_real_1 = [70]
+
+  /// @label Grid sales rate (real)
+  /// @unit $/MWh
+  input grdsls_rt_real_1 = [65]
+
+  /// @label PPA cost percentage
+  /// @unit %
+  input ppa_cst_pct_1 = [0.05]
+
+  /// @label Embedded benefits rate (real)
+  /// @unit $/MWh
+  input embbnft_rt_real_1 = [4]
+
+  /// @label Recovered materials rate (real)
+  /// @unit $/tonne
+  input recmtl_rt_real_1 = [100]
+
+  /// @label Recovery rate
+  /// @unit %
+  input recovery_rate_1 = [0.02]
+
+
+# h_dir_cst_assumptions: DIRECT COST ASSUMPTIONS
+
+  /// @label APC residue rate
+  /// @unit % of feedstock
+  input apcres_rt_1 = [0.03]
+
+  /// @label APC residue contract price (real)
+  /// @unit $/tonne
+  input apcres_cntrprc_real_1 = [150]
+
+  /// @label Inactive ash rate
+  /// @unit % of feedstock
+  input inactash_rt_1 = [0.2]
+
+  /// @label Inactive ash contract price (real)
+  /// @unit $/tonne
+  input inactash_cntrprc_real_1 = [17]
+
+  /// @label O&M fee per quarter
+  /// @unit $ 000s
+  input o_m_fee_qtr_1 = [1280]
+
+  /// @label Reimbursable costs per quarter
+  /// @unit $ 000s
+  input reimbcst_qtr_1 = [280]
+
+  /// @label EPC markup on reimbursables
+  /// @unit %
+  input epc_markup_reimbursables_1 = [0.15]
+
+  /// @label Contracted consumables
+  /// @unit $ 000s p.a.
+  input cntrdcnsm_1 = [1200]
+
+
+# h_overhead_assumptions: OVERHEAD ASSUMPTIONS
+
+  /// @label Rates
+  /// @unit $ 000s p.a.
+  input hoverheadassumptions.rates_1 = [1000]
+
+  /// @label MSA
+  /// @unit $ 000s p.a.
+  input hoverheadassumptions.msa_1 = [675]
+
+  /// @label Insurance
+  /// @unit $ 000s p.a.
+  input hoverheadassumptions.insurance_1 = [1500]
+
+  /// @label Contingency
+  /// @unit $ 000s p.a.
+  input hoverheadassumptions.contingency_1 = [100]
+
+  /// @label Rent
+  /// @unit $ 000s p.a.
+  input hoverheadassumptions.rent_1 = [491]
+
+  /// @label Legals and professional
+  /// @unit $ 000s p.a.
+  input hoverheadassumptions.legals_professional_1 = [40]
+
+  /// @label Water costs
+  /// @unit $ 000s p.a.
+  input hoverheadassumptions.water_costs_1 = [35]
+
+  /// @label Fuel testing
+  /// @unit $ 000s p.a.
+  input hoverheadassumptions.fuel_testing_1 = [30]
+
+  /// @label EA permit fee
+  /// @unit $ 000s p.a.
+  input hoverheadassumptions.ea_permit_fee_1 = [29.77]
+
+  /// @label Annual audit
+  /// @unit $ 000s p.a.
+  input hoverheadassumptions.annual_audit_1 = [25]
+
+  /// @label Opex contingency
+  /// @unit $ 000s p.a.
+  input hoverheadassumptions.opex_contg_1 = [25]
+
+  /// @label Rent for surface water drainage
+  /// @unit $ 000s p.a.
+  input hoverheadassumptions.rnt_surface_water_drainage_1 = [6.55]
+
+  /// @label Telephones/bank charges
+  /// @unit $ 000s p.a.
+  input hoverheadassumptions.telephones_bnkchrg_1 = [6]
+
+  /// @label Bank charges
+  /// @unit $ 000s p.a.
+  input hoverheadassumptions.bank_charges_1 = [2.5]
+
+
+# h_working_cap_assumptions: WORKING CAPITAL ASSUMPTIONS
+
+  /// @label Accounts receivable lag
+  /// @unit months
+  input ar_lag_2 = [1]
+
+  /// @label Accounts payable lag
+  /// @unit months
+  input ap_lag_2 = [1]
+
+
+# h_financing: FINANCING
+
+  /// @label Equity investment profile switch
+  /// @unit switch
+  input eq_invst_prof_switch_1 = [2]
+
+  ## h_senior_debt_facility: Senior debt facility
+
+    /// @label Senior debt input leverage
+    /// @unit %
+    input input_leverage_1 = [0.75]
+
+    /// @label Senior debt sizing method
+    /// @unit 1 = DSCR, 2 = leverage
+    input sizing_method_1 = [1]
+
+    /// @label Senior debt commitment
+    /// @unit $ 000s
+    input commitment_1 = [260000]
+
+    /// @label Construction period margin
+    /// @unit %
+    input constprd_mrgn_1 = [0.025]
+
+    /// @label Reference rate
+    /// @unit %
+    input reference_rate_1 = [0.02]
+
+    /// @label Day count basis
+    /// @unit days
+    input day_count_basis_1 = [360]
+
+    /// @label Commitment fee rate
+    /// @unit %
+    input commitment_fee_rt_1 = [0.00875]
+
+    /// @label Upfront fee rate
+    /// @unit %
+    input upfront_fee_rt_1 = [0.01]
+
+  ## h_debt_capacity_assumptions: Debt capacity assumptions
+
+    /// @label Target DSCR
+    /// @unit x
+    input target_dscr_1 = [1.4]
+
+    /// @label Repayment period margin
+    /// @unit %
+    input rpmt_prd_mrgn_1 = [0.02]
+
+    /// @label Loan life
+    /// @unit years
+    input loan_life_1 = [18]
+
+
+# h_accounting: ACCOUNTING
+
+  ## h_depreciation: Depreciation
+
+    /// @label Useful life of asset
+    /// @unit years
+    input useful_life_ast_1 = [25]
+
+
+# h_mdl_technical_inputs_not_chg: MODEL TECHNICAL INPUTS - DO NOT CHANGE
+
+  /// @label  Model track tolerance level 
+  input model_track_tolerance_level = [0.001]
+
+  /// @label Model check tolerance level
+  /// @unit tolerance
+  input chk_tolerance_level = [0.001]
+
+  /// @label Months in year
+  /// @unit months
+  input months_in_year = [12]
+
+  /// @label  Days in year
+  input days_in_year = [365]
+
+  /// @label Hours in day
+  /// @unit hours
+  input hours_in_day = [24]
+
+  /// @label Number of periods in a year
+  /// @unit periods
+  input num_prds_yr = [4]
+
+  /// @label  Standard Monetary Unit
+  input standard_monetary_unit = [$ 000s]
+
+  /// @label  US$c / US$ 
+  input usc__us = [100]
+
+  /// @label  GWh to KWh conversion 
+  input gwh_to_kwh_conversion = [1000000]
+
+  /// @label Units in a thousand
+  /// @unit units
+  input units_thousand = [1000]
+
+  /// @label Small negative value for IRR
+  /// @unit $ 000s
+  input small_negative_val_irr = [-1e-9]
+
+  ## h_timeline_label: Timeline label
+
+    /// @label Pre-forecast period
+    /// @unit label
+    input 1027 = [Pre-fcst]
+
+    /// @label Financial Close
+    /// @unit label
+    input 1028 = [Fin Close]
+
+    /// @label Construction
+    /// @unit label
+    input 1029 = [Construction]
+
+    /// @label Operations
+    /// @unit label
+    input 1030 = [Operations]
+
+    /// @label Post ops
+    /// @unit label
+    input 1031 = [Post ops]
+
+    /// @label Input row template for relocation macro
+    /// @unit unit
+    input input_row_template_relocation_macro = [0]

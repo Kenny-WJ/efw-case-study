@@ -1,0 +1,11 @@
+// HYBRID TIMELINE: MONTHLY (PERIODS 1-47) [2026-2029], then QUARTERLY (PERIODS 48-182) [2029-2063]
+
+# h_epc_profile: EPC profile
+
+  /// @label Base EPC cost profile
+  /// @unit %
+  calc[n] cst = {
+[:7] = [Input cells]
+[7:48] = 90%/41
+[48:] = [Input cells]
+}

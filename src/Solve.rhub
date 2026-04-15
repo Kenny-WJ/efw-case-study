@@ -1,0 +1,46 @@
+// HYBRID TIMELINE: MONTHLY (PERIODS 1-47) [2026-2029], then QUARTERLY (PERIODS 48-182) [2029-2063]
+
+# h_calc_line_items: CALC LINE ITEMS
+
+  /// @label Cashflow available for senior debt
+  /// @unit $ 000s
+  calc[n] cashflow_avail_senior_debt = {{hcfstatement.cashflow_avail_senior_debt[n]}}
+
+
+# h_paste_line_items: PASTE LINE ITEMS
+
+  /// @label Cashflow available for senior debt - paste
+  /// @unit $ 000s
+  calc[n] cashflow_avail_senior_debt_2 = [Input cells]
+
+  /// @label Cashflow available for senior debt - paste
+  /// @unit $ 000s
+  calc[n] cashflow_avail_senior_debt_1 = [Input cells]
+
+  /// @label Project costs to be financed - paste
+  /// @unit $ 000s
+  calc[n] prj_cst_financed = [Input cells]
+
+
+# h_checks: CHECKS
+
+  calc[n] Solve!F44 = {
+[0] = IF(SUM({{cashflow_avail_senior_debt_chk_2[:]}})>{{CHK_TOL[]}},1,0)
+[1] = IF(SUM({{prj_cst_financed_chk[:]}})>{{CHK_TOL[]}},1,0)
+}
+
+  /// @label Cashflow available for senior debt - check
+  /// @unit check
+  calc[n] cashflow_avail_senior_debt_chk_2 = ABS({{cashflow_avail_senior_debt[n]}}-{{cashflow_avail_senior_debt_2[n]}})
+
+  /// @label Cashflow available for senior debt - check
+  /// @unit check
+  calc[n] cashflow_avail_senior_debt_chk_1 = ABS({{cashflow_avail_senior_debt[n]}}-{{cashflow_avail_senior_debt_1[n]}})
+
+  /// @label Project costs to be financed - check
+  /// @unit check
+  calc[n] prj_cst_financed_chk = ABS({{financed[n]}}-{{prj_cst_financed[n]}})
+
+  /// @label Master solve check
+  /// @unit check
+  calc summ_Solve!F44 = SUM({{Solve!F44[:]}})

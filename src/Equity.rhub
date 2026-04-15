@@ -1,0 +1,60 @@
+// HYBRID TIMELINE: MONTHLY (PERIODS 1-47) [2026-2029], then QUARTERLY (PERIODS 48-182) [2029-2063]
+
+# h_share_capital: SHARE CAPITAL
+
+  /// @label Share capital redemption POS
+  /// @unit $ 000s
+  calc[n] shcap_redemption_pos = {{shcap_bal_beg[n]}}*{{lst_op_prd_flag[n]}}
+
+  /// @label Share capital redemption
+  /// @unit $ 000s
+  calc[n] shcap_redemption = -1*{{shcap_redemption_pos[n]}}
+
+  /// @label Share capital balance BEG
+  /// @unit $ 000s
+  calc[n] shcap_bal_beg = {{shcap_bal[n-1]}}
+
+  /// @label Share capital balance
+  /// @unit $ 000s
+  calc[n] shcap_bal = {{shcap_bal_beg[n]}}+{{drwdn_dur_const[n]}}-{{shcap_redemption_pos[n]}}
+
+
+# h_ret_earnings: RETAINED EARNINGS
+
+  /// @label Retained earnings balance BEG
+  /// @unit $ 000s
+  calc[n] hretearnings.bal_beg = {{hretearnings.bal[n-1]}}
+
+  /// @label Retained earnings balance
+  /// @unit $ 000s
+  calc[n] hretearnings.bal = {{hretearnings.bal_beg[n]}}+{{pft_after_tax[n]}}-{{pd_pos[n]}}
+
+
+# h_retained_cash: RETAINED CASH
+
+  /// @label Retained cash balance BEG
+  /// @unit $ 000s
+  calc[n] cshbal_beg = {{cshbal[n-1]}}
+
+  /// @label Retained cash balance
+  /// @unit $ 000s
+  calc[n] cshbal = {{cshbal_beg[n]}}+{{cf_avail_divd[n]}}-{{pd_pos[n]}}
+
+
+# h_dividends: DIVIDENDS
+
+  /// @label Earnings available for dividend
+  /// @unit $ 000s
+  calc[n] earnings_avail_dividend = MAX(0,SUM(§{{hretearnings.bal_beg[n]}}, {{pft_after_tax[n]}}§))
+
+  /// @label Cash available for dividends
+  /// @unit $ 000s
+  calc[n] csh_avail = MAX(0,SUM(§{{cshbal_beg[n]}}, {{cf_avail_divd[n]}}§))
+
+  /// @label Dividends paid POS
+  /// @unit $ 000s
+  calc[n] pd_pos = MIN(§{{earnings_avail_dividend[n]}}, {{csh_avail[n]}}§)
+
+  /// @label Dividends paid
+  /// @unit $ 000s
+  calc[n] dividends_paid = -1*{{pd_pos[n]}}

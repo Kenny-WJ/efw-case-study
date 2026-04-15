@@ -1,0 +1,9 @@
+// TIMELINE: Unable to detect (no data in timeseries range)
+
+# h_check_summary: CHECK SUMMARY
+
+  calc[n] Check!F10 = {
+[:3] = {{summ_bs}}
+[3] = {{summ_sources_chk}}
+[4] = {{summ_Solve!F44}}
+}

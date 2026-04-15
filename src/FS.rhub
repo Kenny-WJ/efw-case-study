@@ -1,0 +1,91 @@
+// HYBRID TIMELINE: MONTHLY (PERIODS 1-47) [2026-2029], then QUARTERLY (PERIODS 48-182) [2029-2063]
+
+# h_is: INCOME STATEMENT
+
+  /// @label EBITDA
+  /// @unit $ 000s
+  calc[n] ebitda = SUM(§{{revenue[n]}}, {{tot_op_expd[n]}}§)
+
+  /// @label EBIT
+  /// @unit $ 000s
+  calc[n] ebit = {{ebitda[n]}}+SUM({{fixed_ast_depr[n]}})
+
+  /// @label Profit before tax
+  /// @unit $ 000s
+  calc[n] pft_before_tax = {{ebit[n]}}+SUM(§{{senior_debt_rpmt_prd_int[n]}}, {{[Empty cells (shareholder loan interest placeholder)][n]}}§)
+
+  /// @label Profit after tax
+  /// @unit $ 000s
+  calc[n] pft_after_tax = {{pft_before_tax[n]}}+{{[Empty cells (corporate tax placeholder)][n]}}
+
+  /// @label Additions to retained earnings
+  /// @unit $ 000s
+  calc[n] additions_ret_earnings = {{pft_after_tax[n]}}+{{dividends_paid[n]}}
+
+
+# h_cf_statement: CASH FLOW STATEMENT
+
+  /// @label Operating cashflow
+  /// @unit $ 000s
+  calc[n] hcfstatement.op_cashflow = SUM(§{{ebitda[n]}}, {{net_working_cap_movement[n]}}, {{[Empty cells (corporate tax placeholder)][n]}}§)
+
+  /// @label Cashflow available for senior debt
+  /// @unit $ 000s
+  calc[n] hcfstatement.cashflow_avail_senior_debt = {{hcfstatement.op_cashflow[n]}}+SUM(§{{const_cst[n]}}, {{financing_costs[n]}}, {{senior_debt_drwdn[n]}}, {{drwdn_dur_const[n]}}§)
+
+  /// @label Cash flow available for DSRA
+  /// @unit $ 000s
+  calc[n] cf_avail_dsra = {{hcfstatement.cashflow_avail_senior_debt[n]}}+SUM(§{{senior_debt_rpmt_prd_int[n]}}, {{senior_debt_sculpted_rpmt[n]}}§)
+
+  /// @label Cashflow available for shareholder loan
+  /// @unit $ 000s
+  calc[n] cashflow_avail_shln = {{cf_avail_dsra[n]}}+SUM(§{{[Empty cells (dsra deposits placeholder)][n]}}, {{[Empty cells (dsra withdrawal placeholder)][n]}}§)
+
+  /// @label Cashflow available for share capital redemption
+  /// @unit $ 000s
+  calc[n] cashflow_avail_shcap_redemption = {{cashflow_avail_shln[n]}}+SUM(§{{[Empty cells (shareholder loan interest placeholder)][n]}}, {{[Empty cells (shareholder loan principal repayment placeholder)][n]}}§)
+
+  /// @label Cash flow available for dividends
+  /// @unit $ 000s
+  calc[n] cf_avail_divd = {{cashflow_avail_shcap_redemption[n]}}+{{shcap_redemption[n]}}
+
+  /// @label Net cash flow
+  /// @unit $ 000s
+  calc[n] net_cash_flow = {{cf_avail_divd[n]}}+{{dividends_paid[n]}}
+
+
+# h_balance_sheet: BALANCE SHEET
+
+  ## h_non_cur_ast: Non current assets
+
+    /// @label Non current assets
+    /// @unit $ 000s
+    calc[n] non_cur_ast = SUM({{fixed_ast_bal[n]}})
+
+  ## h_current_assets: Current assets
+
+    /// @label Current assets
+    /// @unit $ 000s
+    calc[n] current_assets = SUM(§{{cshbal[n]}}, {{ar_bal[n]}}, {{[Empty cells (dsra balance placeholder)][n]}}§)
+
+    /// @label Total assets
+    /// @unit $ 000s
+    calc[n] total_assets = {{current_assets[n]}}+{{non_cur_ast[n]}}
+
+    /// @label Total liabilities
+    /// @unit $ 000s
+    calc[n] tot_liab = SUM(§{{ap_bal[n]}}, {{bal[n]}}, {{shcap_bal[n]}}, {{hretearnings.bal[n]}}§)
+
+
+# h_bs_chk: BALANCE SHEET CHECK
+
+  /// @label Balance sheet check
+  /// @unit check
+  calc summ_bs = IF(SUM({{bs[:]}})<>0,1,0)
+
+  /// @label Balance sheet check
+  /// @unit check
+  calc[n] bs = IF(ABS({{total_assets[n]}}-{{tot_liab[n]}})>{{CHK_TOL[]}},1,0)
+
+  /// @label Balance sheet difference
+  calc[n] bs_difference = {{total_assets[n]}}-{{tot_liab[n]}}

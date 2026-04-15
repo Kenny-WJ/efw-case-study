@@ -1,0 +1,138 @@
+// HYBRID TIMELINE: MONTHLY (PERIODS 1-47) [2026-2029], then QUARTERLY (PERIODS 48-182) [2029-2063]
+
+# h_project_costs_1: PROJECT COSTS
+
+  /// @label Project costs to be financed
+  /// @unit $ 000s
+  calc[n] financed = {{pos[n]}}+{{hfinancingcosts.pos[n]}}-{{op_cashflow[n]}}
+
+  /// @label Total project costs to be financed
+  /// @unit $ 000s
+  calc tot_financed = SUM({{prj_cst_financed[:]}})
+
+
+# h_eq_draw_down: EQUITY DRAW DOWN
+
+  ## h_pro_rata_drwdn: Equity pro rata drawdown
+
+    /// @label Equity pro rata drawdown
+    /// @unit $ 000s
+    calc[n] eq_pro_rata_drwdn = {{prj_cst_financed[n]}}*(1-{{leverage_2}})
+
+  ## h_active_invst_prof: Active equity investment profile
+
+    /// @label Equity drawdown during construction
+    /// @unit $ 000s
+    calc[n] drwdn_dur_const = INDEX(§{{[Empty cells (upfront equity drawdown placeholder)][n]}}, {{eq_pro_rata_drwdn[n]}}§,{{eq_invst_prof_switch_1}})
+
+
+# h_senior_debt: SENIOR DEBT
+
+  ## h_debt_capacity: Debt capacity
+
+    /// @label All-in repayment period interest rate
+    /// @unit %
+    calc all_rpmt_prd_intrt = {{reference_rate_1}}+{{rpmt_prd_mrgn_1}}
+
+    /// @label Period senior debt discount rate
+    /// @unit rate
+    calc[n] prd_disc_rt = {{all_rpmt_prd_intrt}}/{{day_count_basis_1}}*{{days_in_period[n]}}
+
+    /// @label Senior debt discount factor
+    /// @unit factor
+    calc[n] disc_fct = IF({{hendconstprdflag.constprd[n]}}=1,1,{{disc_fct[n-1]}}/(1+{{prd_disc_rt[n]}}))
+
+    /// @label Senior debt service at target ratio
+    /// @unit $ 000s
+    calc[n] svc_target_rt = {{cashflow_avail_senior_debt_2[n]}}/{{target_dscr_1}}*{{senior_debt_ln_life_flag[n]}}
+
+    /// @label Debt capacity
+    /// @unit $ 000s
+    calc debt_capacity = SUMPRODUCT({{disc_fct[:]}},{{svc_target_rt[:]}})
+
+    /// @label Leverage at debt capacity
+    /// @unit %
+    calc leverage_1 = {{debt_capacity}}/{{tot_financed}}
+
+    /// @label Senior debt leverage
+    /// @unit %
+    calc leverage_2 = INDEX(§{{leverage_1}}, {{input_leverage_1}}§,{{sizing_method_1}})
+
+  ## h_drwdn: Senior debt drawdown
+
+    /// @label Senior debt drawdown
+    /// @unit $ 000s
+    calc[n] senior_debt_drwdn = {{prj_cst_financed[n]}}*{{leverage_2}}
+
+  ## h_senior_debt_1: Senior debt
+
+    /// @label Senior debt balance BEG
+    /// @unit $ 000s
+    calc[n] bal_beg = {{bal[n-1]}}
+
+    /// @label Senior debt balance
+    /// @unit $ 000s
+    calc[n] bal = {{bal_beg[n]}}+{{senior_debt_drwdn[n]}}-{{hsculptedprincipalrpmt.pos[n]}}
+
+  ## h_rpmt_prd_int: Senior debt repayment period interest
+
+    /// @label Senior debt repayment period interest POS
+    /// @unit $ 000s
+    calc[n] hrpmtprdint.pos = {{bal_beg[n]}}*{{all_rpmt_prd_intrt}}/{{day_count_basis_1}}*{{days_in_period[n]}}*{{senior_debt_ln_life_flag[n]}}
+
+    /// @label Senior debt repayment period interest
+    /// @unit $ 000s
+    calc[n] senior_debt_rpmt_prd_int = -1*{{hrpmtprdint.pos[n]}}
+
+  ## h_sculpted_principal_rpmt: Senior debt sculpted principal repayment
+
+    /// @label Senior debt sculpted repayment POS
+    /// @unit $ 000s
+    calc[n] hsculptedprincipalrpmt.pos = {{svc_target_rt[n]}}-{{hrpmtprdint.pos[n]}}
+
+    /// @label Senior debt sculpted repayment
+    /// @unit $ 000s
+    calc[n] senior_debt_sculpted_rpmt = -1*{{hsculptedprincipalrpmt.pos[n]}}
+
+  ## h_upfront_fee: Upfront fee
+
+    /// @label Upfront fee
+    /// @unit $ 000s
+    calc[n] upfront_fee = {{commitment_1}}*{{upfront_fee_rt_1}}*{{fin_close_dt_flag[n]}}
+
+  ## h_commitment_fee: Commitment fee
+
+    /// @label Undrawn commitment
+    /// @unit $ 000s
+    calc[n] undrawn = MAX({{commitment_1}}-{{bal_beg[n]}},0)
+
+    /// @label Commitment fee
+    /// @unit $ 000s
+    calc[n] commitment_fee = {{undrawn[n]}}*{{commitment_fee_rt_1}}*{{days_in_period[n]}}/{{day_count_basis_1}}*{{hconstprdflag.constprd[n]}}
+
+  ## h_int_dur_const: Interest during construction
+
+    /// @label All-in interest rate
+    /// @unit %
+    calc all_intrt = {{reference_rate_1}}+{{constprd_mrgn_1}}
+
+    /// @label Interest during construction
+    /// @unit $ 000s
+    calc[n] int_dur_const = {{bal_beg[n]}}*{{all_intrt}}*{{days_in_period[n]}}/{{day_count_basis_1}}*{{hconstprdflag.constprd[n]}}
+
+  ## h_financing_costs: Financing costs
+
+    /// @label Financing costs POS
+    /// @unit $ 000s
+    calc[n] hfinancingcosts.pos = {{upfront_fee[n]}}+{{commitment_fee[n]}}+{{int_dur_const[n]}}
+
+    /// @label Financing costs
+    /// @unit $ 000s
+    calc[n] financing_costs = -1*{{hfinancingcosts.pos[n]}}
+
+
+# h_eq_invst_irr: EQUITY INVESTMENT FOR IRR
+
+  /// @label Equity investment for IRR calc
+  /// @unit $ 000s
+  calc[n] calc = -1*{{drwdn_dur_const[n]}}+{{flag[n]}}*{{small_negative_val_irr}}
